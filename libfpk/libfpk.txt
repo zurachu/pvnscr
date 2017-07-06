@@ -1,0 +1,208 @@
+
+libfpk -- using FPK / PAR archive on P/ECE
+	By Yui N., 2003.
+==========================================
+
+拙作 fpkarc / par で生成した拡張圧縮 fpk 書庫（par）の展開を P/ECE 上で行うため
+のライブラリです。もちろん，通常の非圧縮 fpk も扱えます。
+
+現状 deflate の展開には P/ECE カーネルのソースをそのまま埋め込んでいます。
+
+ヅラ Chu さんの pva フォーマット書庫の展開に対応しました．pva のときのみ，展開
+されたデータの末尾に '\0' を付加します．
+
+
+型の説明
+--------
+libfpk では Windows に似た型名を使用しています。
+Win2Piece.h に，それらの対応が記載されていますし，/usr/piece/include/PIECE_Std.h
+にも同様のものが存在します。
+
+typedef struct
+{
+  FPKHEADER  fpkHeader;
+  FILEACC    pfa;
+}FPK, *PFPK;
+typedef PFPK HFPK;
+
+	fpk ファイル一つ分の情報を保持します。fpkHeader は，fpk ファイルヘッダ
+	そのものです。fpk ファイルヘッダについては後述します。
+	pfa は，pceFileOpen() で得られる FILEACC 構造体です。libfpk では，この
+	pfa を使用してファイルを展開します。
+
+	HFPK は一見ハンドルのように見えてエラそう(ﾄﾞｺｶﾞﾀﾞ)ですが，実体は PFPK
+	同様ただのポインタです。
+
+typedef struct
+{
+  DWORD  dwHeader;
+  DWORD  dwFilesAmount;
+}FPKHEADER;
+
+	fpk ファイルヘッダです。dwFilesAmount には，格納されたファイルの総数が
+	1 ベースで入ります。fpklib を使用中にファイルの総数を知りたくなったら，
+		hFpk->fpkHeader.dwFilesAmount
+	このように HFPK 型を逆参照することで得ることができます。
+
+typedef struct
+{
+  CHAR   szFileName[16];
+  DWORD  dwOffset;
+  DWORD  dwSize;
+}FPKENTRY;
+
+	fpk 書庫内のファイルテーブルのエントリ一つ分です。libfpk では，この構造
+	体を使って書庫内のファイルを特定します。
+	これも必要な情報はそのまま逆参照で得ることができます。
+
+	szFileName には，書庫内のファイル名が入ります。もしそのファイルが拡張圧
+	縮エントリであったときは，(szFileName[15] & 0x80) が真となります。そう
+	でない時には，この式は偽となります（文字列の最後のバイトなので，ヌル文
+	字が入っているはずだから）。
+
+	(szFileName[15] & 0xc0) == 0xc0 となる場合，そのエントリは zlib によっ
+	て圧縮されています。(szFileName[15] & 0xc0) == 0x80 となる場合，そのエ
+	ントリは LZSS によって圧縮されています。libfpk では，どちらのエントリも
+	シームレスに扱うことができます。
+
+	dwOffSet は，fpk / par 書庫の先頭から数えたバイト単位のオフセットです。
+	fpkarc / par や nsawa さんの dfpck, および本家の FilePack を使っていれ
+	ば，この値は DWORD アラインメントされています。
+
+	dwSize は，そのファイルのサイズです。par の場合，圧縮後のファイルサイズ
+	が格納されています。この値には，上記の DWORD アラインメントをするための
+	パディングバイトはカウントされていません。正確にファイルそのもののサイ
+	ズをさしています。
+
+
+関数の説明
+----------
+HFPK fpkOpenArchive(LPSTR lpszFileName)
+	fpk / par ファイルを開きます。
+	lpszFileName には，PFFS 上の書庫ファイル名を渡します。
+	関数が成功すると，FPK 型構造体へのポインタを返します。
+	失敗すると NULL を返します。
+	返ってくるポインタは pceHeapAlloc() されたものなので，ファイルを使い終
+	わったら必ず fpkCloseArchive() してください。
+
+VOID fpkCloseArchive(HFPK hFpk)
+	書庫ファイルを閉じます。
+	hFpk には，fpkOpenArchive() で得られたポインタを渡します。
+	この関数を実行すると，hFpk は無効なポインタとなります。
+
+BOOL fpkGetFileInfoS(HFPK hFpk, LPSTR lpszFileName, FPKENTRY *lpFileEntry)
+BOOL fpkGetFileInfoN(HFPK hFpk, DWORD dwFileIndex, FPKENTRY *lpFileEntry)
+	書庫ファイルの中の，指定されたファイルに関する情報を得ます。
+	fpkExtractToBuffer() するときにも，この関数で得られる lpFileEntry が必
+	要です。
+
+	指定する方法はふたつあり，書庫中のファイル名を使うものと，書庫中のファ
+	イルテーブルのインデックスを使うものがあります。
+
+	fpkGetFileInfoS()（以下 S()）はファイル名（lpszFileName）を使うものであ
+	り，fpkGetFileInfoN()（以下 N()）はインデックス（dwFileIndex）を使うも
+	のです。N() の方が一発でアドレッシングできるため高速です。
+
+	N() で用いるインデックスと実際のファイルとの対応は，par l を使うことで
+	調べることができます。par l の，
+		0: hogehoge.pmd    offset:0xdeadbeef    size: 12345
+	この表示行から，書庫中の hogehoge.pmd を指定するインデックスは 0 である
+	ことがわかります。
+
+	hFpk には，fpkOpenArchive() で得られたポインタを渡します。
+	lpFileEntry には，FPKENTRY 型の構造体の実体をあらかじめ定義しておき，そ
+	のポインタを渡します。たとえば，こんなふうに。
+	{
+		FPKENTRY fpkEntry;
+		if(fpkGetFileInfoN(hFpk, 0, &fpkEntry) == TRUE)
+			fpkEntry を使って何かをする;
+	}
+
+	関数が成功すると，lpFileEntry に適切な値を入れて TRUE を返します。
+	失敗したときには FALSE を返し，lpFileEntry には手をつけません。
+
+BYTE *fpkExtractToBuffer(HFPK hFpk, FPKENTRY *fpkEntry)
+	fpkEntry で特定される書庫内ファイルをメモリ上に展開し，そのポインタを返
+	します。fpkEntry で示されたエントリが拡張圧縮エントリであった場合は，自
+	動的に圧縮解除したデータへのポインタを返します。
+
+	fpkEntry には，fpkGetFileInfo[NS]() で得られたものを渡してください。
+	fpkExtractToBuffer() では，fpkEntry が正当なデータであるかどうかチェッ
+	クしていません（逆にこれを利用するという手も考えられますが……）。
+
+	この関数で返されたバッファは fpkExtractToBuffer() 内で pceHeapAlloc()
+	されたものです。不要になったら pceHeapFree() してください。
+
+
+ソースについて
+--------------
+全ソースコードを添付してあります。
+標準の P/ECE 開発環境で make が通るはずです。
+
+あなたの開発するアプリに合わせて適切にチューニングしてください。
+
+
+サンプルアプリ
+--------------
+P/ECE 実機で動作する libfpk のサンプルアプリを添付してあります。
+書庫 mypmds.par に格納された pmd ファイルを演奏するものです。
+あらかじめ mypmds.par を作成し，P/ECE に転送しておいてください。
+（pmd ファイル以外のものを格納して実行すると不幸なことになります（ぇ）
+
+パッドの左右で曲選択，A で演奏します。
+
+
+著作権とか
+----------
+
+複雑で，しかも par とは微妙に内容が異なりますので最後まで読んでください。
+
+libfpk の，pceFileReadPos() と LZSS / zlib 展開ルーチン以外の著作権は Yui N. が
+保持します。
+
+libfpk の LZSS 展開ルーチンは，p/ware / Hitode Yamatsuki さんの plz のソースコ
+ードおよび後述の URL の記事が元になっています。この LZSS 展開ルーチンの著作権表
+示は以下のとおりです（ファイル名や関数名を libfpk に合わせています）。
+
+	hitodeLZSSDecoder() のソースコードの著作権は p/ware / Hitode Yamatsuki
+	が保持していますが、転載・改変・再配布・利用は自由です。便利だと思われ
+	たら積極的にご利用ください
+
+p/ware さんによるオリジナルの LZSS デコードルーチンは，
+	http://www.aw.wakwak.com/~hitode/piece/index.html#plz
+から得ることができます。
+
+pceFileReadPos() は，「おでかけマルチ」のソースコード piece_ex.c から引用しまし
+た。この部分のライセンスについては，AQUAPLUS の「付属ソースを元にしたプログラム
+の再配布の扱いについて」に従います。
+
+原本の著作権表示は以下のとおりです。
+	Copyright:	AQUA (Leaf)  since 2001 - 
+	Programd by.	Miyakusa Masakazu
+
+libfpk における zlib 圧縮エントリの展開には，ヅラChu さんの myunpack のソースを
+利用しており，まかべひろし さんによる zlib 展開ルーチンサンプル（P/ECE HAND
+BOOK Vol.2「緋色の霧」より）のコードを含みます。
+
+ヅラ Chu さんの myunpack は，
+	http://zurachu.net/piece/tips/ppack.html
+から得ることができます。
+
+肝心の pceZlibExpand() は，P/ECE カーネル 1.20 のソースコードをそのまま利用して
+います（inflate.c, inflate.h, piecezl.h）。この部分のライセンスについては，
+AQUAPLUS の「付属ソースを元にしたプログラムの再配布の扱いについて」に従います。
+（inflate.c はパブリックドメイン扱い）
+
+原本の著作権表示は以下のとおりです。
+	Copyright (C)2001 AQUAPLUS Co., Ltd. / OeRSTED, Inc. 
+	all rights reserved.
+	Coded by MIO.H (OeRSTED)
+
+私が書いた部分については転載・改変・再配布自由です。あなたが開発するアプリに合
+わせてチューニングしたり，プライベートビルドを作成して配布するなどしてください。
+
+
+-----------------------------
+Yui N. (a.k.a. Autch)
+mailto:yui@autch.net
+http://www.autch.net/

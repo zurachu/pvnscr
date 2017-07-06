@@ -1,0 +1,13 @@
+short pvns_CheckScriptHeader( const unsigned char* script );
+unsigned char* pvns_LoadScriptFile( const char* fName );
+unsigned char* pvns_LoadResourceFile( const char* fName, short type );
+short pvns_LaunchGetFileArray( short* array );
+FILEINFO pvns_LaunchGetFileInfo( int num );
+BOOL pvns_SaveFileDefine( const char* fName, SAVE_DATA* sd );
+void pvns_SaveFileClear( void );
+BOOL pvns_IsSaveFileExist( void );
+void pvns_SaveFileInfo(short id, PCETIME* pTime, char* msg);
+void pvns_SaveFileLoad(short id, SAVE_DATA* sd);
+void pvns_SaveFileSave(short id, SAVE_DATA* sd);
+void pvns_GlobalLoad(SAVE_DATA* sd);
+void pvns_GlobalSave(SAVE_DATA* sd);

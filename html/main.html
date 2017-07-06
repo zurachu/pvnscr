@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<HTML lang="ja">
+
+<HEAD>
+<META http-equiv="Content-Language" content="ja">
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META name="GENERATOR" content="Microsoft FrontPage 4.0">
+<META name="ProgId" content="FrontPage.Editor.Document">
+<TITLE>P/ECE VISUALNOVEL SYSTEM 2.1</TITLE>
+<LINK rel="stylesheet" type="text/css" href="style.css">
+<BASE target="_blank">
+</HEAD>
+
+<BODY>
+
+<TABLE border="0" width="100%">
+<TR>
+<TD class="text">
+<H5><A href="http://www.piece-me.com/"><IMG border="0" src="piece.gif" alt="P/ECE専用" width="63" height="30"></A>（要標準カーネルVer1.20以降・MMC対応カーネルVer1.28以降）</H5>
+
+<P align="center"><IMG border="1" src="bnpvnscr.gif" alt="P/ECE VISUALNOVEL Scripter" width="200" height="40"></P>
+
+<H5 align="center">(c)2004 ヅラChu＠てとら★ぽっと</H5>                                     
+</TD>                                 
+</TR>                                 
+<TR>                                 
+<TH>&nbsp;</TH>                                 
+</TR>                                 
+<TR>                                 
+<TD class="text">                                 
+<H2><A name="1"></A>1.はじめに</H2>                                
+　こんにちは、ヅラChu＠てとら★ぽっとです。このたびは<b>『P<FONT color="#FF0000">/</FONT>ECE VISUALNOVEL   
+Scripter』</b>（以下<b>『P<FONT color="#FF0000">/</FONT>VNScripter』</b>）をダウンロードしていただき、まことにありがとうございます。<BR>                          
+　本ソフトは、<a href="http://www.piece-me.com/">P/ECE</a>でビジュアルノベルを動作させるためのスクリプトエンジンです。簡単な命令文を組み合わせたシナリオファイルと、画像、効果音、BGMを用意するだけで、<a href="http://www.piece-me.com/">P/ECE</a>用のビジュアルノベルを作成でき、本ソフト上で動作させることができます。<br>
+　前バージョンである<b>『P<FONT color="#FF0000">/</FONT>ECE VISUALNOVEL   
+SYSTEM』Ver2.1</b>のバグを修正したほか、メッセージ表示方式を<a href="http://www2.osk.3web.ne.jp/~naokikun/">『NScripter』</a>（高橋直樹氏）に似せるなどの改良を加えました。もちろん従来のメッセージ表示方式も選択することができるので、<b>『P<FONT color="#FF0000">/</FONT>ECE   
+VISUALNOVEL SYSTEM』Ver1.x</b>および<b>Ver2.x</b>用に作成したビジュアルノベルも動作させることができます。<b><font color="#FF0000">（※但し仕様変更によりセーブデータは引き継げません）</font></b><br> 
+　また、作成したビジュアルノベルは<b>『P<FONT color="#FF0000">/</FONT>VNScripter』</b>本体を添付して自由に販売、配布することができます。詳しくは<a href="#5">「著作権について」</a>をご一読下さい。</TD>
+</TR>
+<TR>
+<TH>&nbsp;</TH>
+</TR>
+<TR>
+<TD class="text">
+<H2><A name="2"></A>2.チュートリアル</H2>
+
+<P>　本ソフトを動作させるためには、P/ECEのカーネルが</P>
+
+<ul>
+  <li>標準カーネルVer1.20以降</li>
+  <li><a href="http://www2.plala.or.jp/madoka/Piece_ele/mmc/mmc.htm">MMC対応カーネル</a>（まどかさん）Ver1.28以降</li>
+</ul>
+<P>である必要があります。<br>
+　アーカイブを解凍してできたファイルのうち、</P>
+
+<UL>
+<LI>pvnscr.pex</LI>
+<LI>tutorial.pva</LI>
+<LI>drum.arc（任意・BGMのドラム音色演奏に必要）</LI>
+</UL>
+
+<P>をP/ECE開発環境に付属の<b>『P/ECEコミュニケータ』</b>などでP/ECEに転送し、P/ECEのメニューから<b>『P/VNScripter』</b>を実行して下さい。実行してしばらく待つと、<b>『P<font color="#FF0000">/</font>VNScripter』</b>で実行できるスクリプトファイルの一覧が表示されます。<a href="http://www2.plala.or.jp/madoka/Piece_ele/mmc/mmc.htm">MMC対応カーネル</a>Ver1.28以降で、P/ECEシステムメニュー（START長押しで表示）の「MMC/SD」をONにすると、フラッシュメモリ上のファイルだけでなく、MMC/SDカード上のファイルも表示されます（少し時間がかかります）。<br>
+　スクリプトファイル選択画面から<b>“tutorial.pva”</b>を選択するとチュートリアルのビジュアルノベルが開始します。</TD>
+</TR>
+<TR>
+<TH>&nbsp;</TH>
+</TR>
+<TR>
+<TD class="text">
+<H2><A name="3"></A>3.操作方法</H2>
+<blockquote>
+  <div align="center">
+    <center>
+    <table border="1">
+      <tr>
+        <td rowspan="3" align="center" class="bold">スクリプトファイル選択画面<br>
+          <img border="1" src="launch.gif" width="128" height="88">
+        <td align="center" class="bold">↑↓
+        <td>カーソル移動</td>
+      </tr>
+      <tr>
+        <td align="center" class="bold">A・START
+        <td>決定</td>
+      </tr>
+      <tr>
+        <td align="center" class="bold">SELECT
+        <td>終了</td>
+      </tr>
+      <tr>
+        <td rowspan="5" align="center" class="bold">ゲーム画面<br>
+          <img border="1" src="game.gif" width="128" height="88">
+        <td align="center" class="bold">↑↓
+        <td>選択肢のカーソル移動</td>
+      </tr>
+      <tr>
+        <td align="center" class="bold">A
+        <td>メッセージ送り／選択肢決定</td>
+      </tr>
+      <tr>
+        <td align="center" class="bold">→
+        <td>メッセージ送り（高速）</td>
+      </tr>
+      <tr>
+        <td align="center" class="bold">B
+        <td>ウィンドウを消去</td>
+      </tr>
+      <tr>
+        <td align="center" class="bold">SELECT・START
+        <td>メニューを表示</td>
+      </tr>
+      <tr>
+        <td rowspan="4" align="center" class="bold">メニュー画面<br>
+          <img border="1" src="menu.gif" width="128" height="88">
+        <td align="center" class="bold">↑↓
+        <td>カーソル移動</td>
+      </tr>
+      <tr>
+        <td align="center" class="bold">←→
+        <td>オプション値の変更</td>
+      </tr>
+      <tr>
+        <td align="center" class="bold">A
+        <td>決定／前画面に戻る</td>
+      </tr>
+      <tr>
+        <td align="center" class="bold">B・SELECT・START
+        <td>前画面に戻る</td>
+      </tr>
+    </table>
+    </center>
+  </div>
+</blockquote>
+</TR>
+<TR>
+<TH>&nbsp;</TH>
+</TR>
+<TR>
+<TD class="text">
+<H2><A name="4"></A>4.ビジュアルノベル作成</H2>
+
+<P>　<b>tutorialフォルダ</b>に、先ほど実行したチュートリアルのビジュアルノベルを構成するファイルが入っています。
+<UL>
+  <LI>tutorial.pvn（ビジュアルノベルのスクリプト本体）</LI>
+  <LI>*.pgd（画像ファイル）</LI>
+  <LI>*.ppd（効果音ファイル）</LI>
+  <LI>*.pmd（BGMファイル）</LI>
+</UL>
+<P>　それぞれの作成方法については<A href="manual.html" target="_self">リファレンスマニュアル</A>をご覧下さい。</TD>
+</TR>
+<TR>
+<TH>&nbsp;</TH>
+</TR>
+<TR>
+<TD class="text">
+<H2><A name="5"></A>5.著作権について</H2>
+
+<P>　<b>『P<FONT color="#ff0000">/</FONT>VNScripter』</b>はヅラChuおよびサークル<a href="http://zurachu.net/">「てとら★ぽっと」</a>の著作物です。このアーカイブまたはその内容、あるいはそれらを改造したものを、許可なく転載、再配布することを禁じます。<BR>
+　但し、個人/サークルで作られた<b>『P<FONT color="#ff0000">/</FONT>VNScripter』</b>および<b>『P<font color="#FF0000">/</font>ECE   
+VISUALNOVEL SYSTEM』Ver1.x、Ver2.x</b>用の作品を頒布する際に限り、<b>“pvnscr.pex”</b>または本アーカイブ全体を同梱することを認めています。<BR>  
+　また、作品を頒布する際ご連絡いただければ、当方のWebページで紹介させていただきます。</TD>
+</TR>
+<TR>
+<TH>&nbsp;</TH>
+</TR>
+<TR>
+<TD class="text">
+<H2><A name="6"></A>6.謝辞</H2>
+
+<UL>
+  <LI><A href="http://homepage.broba.ws/genge/">GENGE</A>さん<BR>
+    『縮小フォント表示関数』Ver1.07を改変して利用させていただきました。<br>
+    『半透明（反転）関数』Ver1.00を利用させていただきました。</LI>                        
+  <LI><A href="http://www8.plala.or.jp/randomism/">Randomist</A>さん<BR>                        
+    『ドラム音色分離キット』Ver2.10を利用させていただきました。</LI>                       
+  <LI><a href="http://piece.no-ip.org/">nsawa</a>さん<BR>                     
+    コンパイラにP/ECE用GCC3.3.2を利用させていただきました。<BR>                    
+    『コンソール版filepack』のソースコードを参考にさせていただきました。</LI>                    
+  <LI><a href="http://www.autch.net/">Yui N.</a>さん<br> 
+    『libfpk』を改変して利用させていただきました。</LI>                    
+  <LI><A href="http://www.oersted.co.jp/~mio_h/piece/">MIO.H</A>さん<BR>                    
+    P/ECE開発環境付属のfilepackおよびppackのソースコードを利用させていただきました。</LI>                    
+  <LI><A href="http://www.geocities.jp/krs98xx/">KARASU</A>さん<BR>      
+    チュートリアルに画像を使用させていただきました。</LI>                   
+  <LI><A href="http://sound.jp/chemool/">CHEMOOL</A>さん<BR>      
+    チュートリアルにP/ECE用フリー音楽『ウィニーメイの夢』を使用させていただきました。</LI>                  
+</UL>                  
+</TD>                  
+</TR>                  
+<TR>                  
+<TH>&nbsp;</TH>                  
+</TR>                  
+<TR>                  
+<TD class="text">                  
+<H2><A name="7"></A>7.更新履歴</H2>                 
+                 
+<UL>                 
+  <LI><b>Ver1.1（2005/04/09）</b> 
+    <ul> 
+      <li><a href="http://www2.plala.or.jp/madoka/Piece_ele/mmc/mmc.htm">MMC対応カーネル</a>（まどかさん）に対応しました。</li>
+      <li>特殊文字!s、debug命令を追加しました。</li>
+      <LI>命令の別名を削除しました。</LI>          
+      <li>title命令でセーブファイルを定義していなくても「ロード」が選択できるバグを修正しました。</li>
+      <li>セーブファイルの仕様を変更し、また実際のオフセットで構造体アラインメントおよび予約分を考慮していなかったのを修正しました。</li>
+      <li>対応パッケージファイルに<a href="http://www.autch.net/">par</a>（Yui  
+        N.さん）を追加しました。</li>
+      <li><a href="manual.html#31" target="_self">pvnspack</a>をバージョンアップしました。
+        <ul>
+          <li>パックできるファイルの最大数を1024に増やしました。</li>
+        </ul>
+      </li>
+    </ul>
+  </LI>         
+  <LI><B>Ver1.0（2004/06/01）</B>            
+    <UL>            
+      <LI>初版公開。</LI>           
+      <LI>ソースコードを再構築しました。</LI>           
+      <LI>メッセージ表示形式を<a href="http://www2.osk.3web.ne.jp/~naokikun/">『NScripter』</a>（高橋直樹氏）に似せました。従来のものと選択して使用できます。</LI>           
+      <LI>br,clickstr,lsp,lsph,vsp,csp,setwin命令を追加しました（<a href="http://www2.osk.3web.ne.jp/~naokikun/">『NScripter』</a>準拠）。</LI>          
+      <LI><strike>sndにwave、sndstopにwavestop、bgmにplay、bgmstopにplaystop、setにmov、setwinにsetwindowという別名を追加しました（<a href="http://www2.osk.3web.ne.jp/~naokikun/">『NScripter』</a>準拠）。</strike></LI>          
+      <LI>スクリプトファイル選択時に<b>『P<font color="#FF0000">/</font>VNScripter』</b>で動作しないpvn,fpk,pvaファイルを表示しないようにしました。</LI>          
+      <LI>コンフィグメニュー画面とシステムメニュー画面を統一しました。</LI>          
+      <LI>セーブファイルの仕様を変更しました。</LI>          
+      <LI>ドラム音色分離キットのバージョンアップ（Ver2.00→2.10）に対応しました。</LI>          
+    </UL>         
+  </LI>         
+</UL>         
+              
+</TD>         
+</TR>         
+<TR>         
+<TH>&nbsp;</TH>         
+</TR>         
+</TABLE>         
+         
+<P align="center"><A href="http://zurachu.net/"><IMG border="1" src="bnzurachu.gif" alt="てとら★ぽっと" width="200" height="40"></A></P>         
+         
+</BODY>         
+         
+</HTML>         
