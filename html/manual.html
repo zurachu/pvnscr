@@ -4,7 +4,7 @@
 
 <HEAD>
 <META http-equiv="Content-Language" content="ja">
-<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <META name="GENERATOR" content="Microsoft FrontPage 4.0">
 <META name="ProgId" content="FrontPage.Editor.Document">
 <TITLE>P/ECE VISUALNOVEL SYSTEM 2.0</TITLE>
@@ -20,9 +20,9 @@
 
 <P align="center"><IMG border="1" src="bnpvnscr.gif" alt="P/ECE VISUALNOVEL Scripter" width="200" height="40"></P>
 
-<H2 align="center">���t�@�����X�}�j���A��</H2>
+<H2 align="center">リファレンスマニュアル</H2>
 
-<H5 align="center">(c)2004 �d��Chu���ĂƂ灚�ۂ���</H5>                                                      
+<H5 align="center">(c)2004 ヅラChu＠てとら★ぽっと</H5>                                                      
 </TD>                                                 
 </TR>                               
 <TR>                               
@@ -31,14 +31,14 @@
 <TR>                               
 <TD class="text">                               
                                
-<H2><A name="1"></A>1.�f�[�^�쐬</H2>                                              
+<H2><A name="1"></A>1.データ作成</H2>                                              
 <BLOCKQUOTE>                           
-  <P>1.1 <A href="#11"> �X�N���v�g�̍쐬</A><BR>                              
-  1.2 <A href="#12"> �摜�̍쐬</A><BR>                              
-  1.3 <A href="#13"> ���ʉ��̍쐬</A><BR>                              
-  1.4 <A href="#14"> BGM�̍쐬</A><BR>                              
-  1.5 <A href="#15"> ����e�X�g</A><BR>                    
-  1.6 <A href="#16">�t�@�C���̌���</A></P>                             
+  <P>1.1 <A href="#11"> スクリプトの作成</A><BR>                              
+  1.2 <A href="#12"> 画像の作成</A><BR>                              
+  1.3 <A href="#13"> 効果音の作成</A><BR>                              
+  1.4 <A href="#14"> BGMの作成</A><BR>                              
+  1.5 <A href="#15"> 動作テスト</A><BR>                    
+  1.6 <A href="#16">ファイルの結合</A></P>                             
 </BLOCKQUOTE>                         
                                   
 </TD>                                              
@@ -49,77 +49,77 @@
 <TR>                            
 <TD class="text">                                              
                                   
-<h3><a name="11"></a>1.1&nbsp;�X�N���v�g�̍쐬</h3>                                     
+<h3><a name="11"></a>1.1&nbsp;スクリプトの作成</h3>                                     
                                   
-<p>�@�X�N���v�g�t�@�C���́A���b�Z�[�W�̕\����I�����ɂ�镪��A�摜�̕\������ʉ��ABGM�̉��t�ȂǁA�r�W���A���m�x���̐i�s�𐧌䂷��t�@�C���ł��Btutorial�t�H���_�́gtutorial.pvn�h�Ȃǂ��Q�l�ɁA�������Ȃǂ̃e�L�X�g�G�f�B�^�ŕҏW���ĉ������B</p>      
+<p>　スクリプトファイルは、メッセージの表示や選択肢による分岐、画像の表示や効果音、BGMの演奏など、ビジュアルノベルの進行を制御するファイルです。tutorialフォルダの“tutorial.pvn”などを参考に、メモ帳などのテキストエディタで編集して下さい。</p>      
    
 <blockquote>
    
-<h4>1.1.1 �g���q�A�w�b�_</h4>                                               
+<h4>1.1.1 拡張子、ヘッダ</h4>                                               
                                       
-<p>�@�X�N���v�g�t�@�C���̊g���q�́g.pvn�h�ł���K�v������܂��B�܂��A�X�N���v�g�t�@�C���̐擪��</p>      
+<p>　スクリプトファイルの拡張子は“.pvn”である必要があります。また、スクリプトファイルの先頭に</p>      
    
   <blockquote class="script">PVSC   
   </blockquote>
    
-<p>�Ƃ����w�b�_�����Ă��������B<b>���p�啶���ŁA������O�ɗ]�v�ȕ��������Ȃ��ŉ������B</b><br>
-�@�w�b�_��<b>�gPVNS�h</b>�܂���<b>�gPVN2�h</b>�ɂ���ƁA<b>�wP<font color="#FF0000">/</font>ECE                  
-VISUALNOVEL SYSTEM�x</b>�̃��b�Z�[�W�\�����@�ŃX�N���v�g���������Ƃ��ł��܂����A�{���t�@�����X�ł�<b>�wP<font color="#FF0000">/</font>VNScripter�x</b>�̃��b�Z�[�W�\�����@�����������܂���B<b>�wP<font color="#FF0000">/</font>ECE                  
-VISUALNOVEL SYSTEM�x</b>�̃��b�Z�[�W�\�����@�ɂ��Ă͓��\�t�g�̃��t�@�����X�������������B</p>                       
+<p>というヘッダを入れてください。<b>半角大文字で、これより前に余計な文字を入れないで下さい。</b><br>
+　ヘッダを<b>“PVNS”</b>または<b>“PVN2”</b>にすると、<b>『P<font color="#FF0000">/</font>ECE                  
+VISUALNOVEL SYSTEM』</b>のメッセージ表示方法でスクリプトを書くことができますが、本リファレンスでは<b>『P<font color="#FF0000">/</font>VNScripter』</b>のメッセージ表示方法しか説明しません。<b>『P<font color="#FF0000">/</font>ECE                  
+VISUALNOVEL SYSTEM』</b>のメッセージ表示方法については同ソフトのリファレンスをご覧下さい。</p>                       
                
-<h4>1.1.2 ���b�Z�[�W�̕\��</h4>                                               
+<h4>1.1.2 メッセージの表示</h4>                                               
                                       
-<p>�@<b>�S�p����</b>�ŕ��ʂɕ��͂������Ă����ƁA���b�Z�[�W�Ƃ��ĕ\������܂��B�\���������́A1�s������ŕW���t�H���g�̏ꍇ12�����A�k���t�H���g�̏ꍇ15�����ŁA���ʂɍő�8�s�\���ł��܂��B�ڂ�����<a href="#setwin">setwin����</a>���Q�Ƃ��ĉ������B�X�N���v�g���̉��s�̓��b�Z�[�W���ł����s�ɂȂ�܂����A��s�ɂ͂Ȃ�Ȃ��̂ŁA��s��\���������ꍇ��<a href="#br">br����</a>���g�p���ĉ������B<br>
-<a name="112"></a>�@�܂��A�ȉ��̓��ꕶ���ɂ���āA���b�Z�[�W�\���𐧌䂷�邱�Ƃ��ł��܂��B</p>      
+<p>　<b>全角文字</b>で普通に文章を書いていくと、メッセージとして表示されます。表示文字数は、1行当たりで標準フォントの場合12文字、縮小フォントの場合15文字で、一画面に最大8行表示できます。詳しくは<a href="#setwin">setwin命令</a>を参照して下さい。スクリプト中の改行はメッセージ中でも改行になりますが、空行にはならないので、空行を表示したい場合は<a href="#br">br命令</a>を使用して下さい。<br>
+<a name="112"></a>　また、以下の特殊文字によって、メッセージ表示を制御することができます。</p>      
    
 
 <BLOCKQUOTE>
   <TABLE border="1">
     <TR>
       <TD class="bold">@</TD>
-      <TD>A�{�^���ɂ�郁�b�Z�[�W�����҂��܂��B</TD>
+      <TD>Aボタンによるメッセージ送りを待ちます。</TD>
     </TR>
     <TR>
       <TD class="bold">\</TD>
-      <TD>A�{�^���ɂ�郁�b�Z�[�W�����҂��A�y�[�W���肵�܂��B</TD>
+      <TD>Aボタンによるメッセージ送りを待ち、ページ送りします。</TD>
     </TR>
     <TR>
       <TD class="bold">/</TD>
-      <TD>���̃��b�Z�[�W�\������������܂ŁA�X�N���v�g���̉��s�𖳎����܂��B</TD>
+      <TD>次のメッセージ表示文字が来るまで、スクリプト中の改行を無視します。</TD>
     </TR>
     <TR>
       <TD class="bold">_</TD>
-      <TD>���̕����ɂ��āAclickstr���߂̌��ʂ𖳎����܂��B</TD>
+      <TD>次の文字について、clickstr命令の効果を無視します。</TD>
     </TR>
     <TR>
-      <TD class="bold">!d����</TD>
-      <TD>�����~10ms�P�ʂŃE�F�C�g�������܂��BA�{�^���A���ŏȗ��B</TD>
+      <TD class="bold">!d数字</TD>
+      <TD>数字×10ms単位でウェイトをかけます。Aボタン、→で省略可。</TD>
     </TR>
     <tr>
-      <TD class="bold">!w����</TD>
-      <TD>�����~10ms�P�ʂŃE�F�C�g�������܂��BA�{�^���A���ŏȗ��s�B</TD>
+      <TD class="bold">!w数字</TD>
+      <TD>数字×10ms単位でウェイトをかけます。Aボタン、→で省略不可。</TD>
     </tr>
     <TR>
-      <TD class="bold">!s����</TD>
-      <TD>�Ȍ�A���b�Z�[�W�E�B���h�E��1�����������ɁA�����~10ms�P�ʂŃE�F�C�g�������܂��B<br>
-        �܂�̓��b�Z�[�W�X�s�[�h�𐧌䂵�܂��BA�{�^���A���ŏȗ��B�W����!s0�B</TD>
+      <TD class="bold">!s数字</TD>
+      <TD>以後、メッセージウィンドウに1文字書く毎に、数字×10ms単位でウェイトをかけます。<br>
+        つまりはメッセージスピードを制御します。Aボタン、→で省略可。標準は!s0。</TD>
     </TR>
   </TABLE>
 </BLOCKQUOTE>
-<p>�@<a href="#clickstr">clickstr����</a>���g���ƁA����̕����i�Ⴆ�΁g�B�h�Ȃǁj��\������ۂɎ����I��A�{�^���ɂ�郁�b�Z�[�W�����҂��Ƃ��ł��܂��B�ڂ����̓��t�@�����X���Q�Ƃ��ĉ������B</p>                      
-  <h4>1.1.3 ����</h4>                                        
-<p>�@�摜�̕\���A���ʉ��̍Đ���BGM�̉��t�A�I�����ɂ�镪��Ȃǂ̃m�x���̐���́A�X�N���v�g���ɏ����ꂽ���߂ɂ���čs�Ȃ��܂��B���߂�<b>���p������</b>�ŁA�����������̂�����܂��B�ڂ�����<A href="#2">���߈ꗗ</A>�������������B</p>
-<h4>1.1.4 �ϐ�</h4>                                        
-<p>�@<b>�wP<font color="#FF0000">/</font>VNScripter�x</b>�ɂ́A�t���O�Ȃǂ̒l���i�[���Ă������߂̕ϐ������݂��܂��B�ϐ��̓��e����ʂɕ\����������A���߂̈����Ƃ��Ďg�p���邱�Ƃ��ł��܂��B�Z�[�u�f�[�^���ƂɌŗL��<b>���[�J���ϐ���256��</b>�A�Q�[���S�̂ŋ��ʂ�<b>�O���[�o���ϐ���16��</b>����܂��B�O���[�o���ϐ��͕ύX�����Ǝ����I�ɃZ�[�u�t�@�C���ɕۑ������̂ŁA�N���A�t���O�ȂǂɎg���Ɨǂ��ł��傤�B�ϐ��͐����^�ŁA�l���-32768�`+32767�ł��B<br>
-�@�ϐ��̎g�p���@�ł����A���[�J���ϐ���%0�`%255�A�O���[�o���ϐ���$0�`$15��<b>���p������</b>�X�N���v�g���ɏ������ƂŁA���߂̓r���Ȃ�����Ƃ��Ďg���A�����łȂ���΃��b�Z�[�W�Ƃ��ĕ\������܂��B</p>
+<p>　<a href="#clickstr">clickstr命令</a>を使うと、特定の文字（例えば“。”など）を表示する際に自動的にAボタンによるメッセージ送りを待つことができます。詳しくはリファレンスを参照して下さい。</p>                      
+  <h4>1.1.3 命令</h4>                                        
+<p>　画像の表示、効果音の再生やBGMの演奏、選択肢による分岐などのノベルの制御は、スクリプト中に書かれた命令によって行なわれます。命令は<b>半角小文字</b>で、引数をもつものもあります。詳しくは<A href="#2">命令一覧</A>をご覧下さい。</p>
+<h4>1.1.4 変数</h4>                                        
+<p>　<b>『P<font color="#FF0000">/</font>VNScripter』</b>には、フラグなどの値を格納しておくための変数が存在します。変数の内容を画面に表示させたり、命令の引数として使用することができます。セーブデータごとに固有の<b>ローカル変数が256個</b>、ゲーム全体で共通の<b>グローバル変数が16個</b>あります。グローバル変数は変更されると自動的にセーブファイルに保存されるので、クリアフラグなどに使うと良いでしょう。変数は整数型で、値域は-32768～+32767です。<br>
+　変数の使用方法ですが、ローカル変数は%0～%255、グローバル変数は$0～$15と<b>半角文字で</b>スクリプト中に書くことで、命令の途中なら引数として使われ、そうでなければメッセージとして表示されます。</p>
    
-<H4>1.1.5 ���x��</H4>                          
+<H4>1.1.5 ラベル</H4>                          
                         
-<p>�@<b>�wP<font color="#FF0000">/</font>VNScripter�x</b>�ŁA�X�N���v�g�̓���ʒu�Ɉړ�����Ƃ��́A���x�����g�p���܂��B<a href="#goto">goto����</a>��<a href="#gosub">gosub����</a>�̈����Ƀ��x����^���邱�ƂŁA�X�N���v�g�̓ǂݍ��݈ʒu���ړ������邱�Ƃ��ł��܂��B���x���Ƃ��ĔF�������̂́A�s�̐擪��<b>�g*�h�i�A�X�^���X�N�j</b>������Ƃ��납��A���p�X�y�[�X�܂��̓^�u�܂��͉��s������Ƃ���܂łł��B���x���ɂ͑S�p�����Ɣ��p�����̗����g���܂����A<B>���p�́g,�h�i�J���}�j�A�g;�h�i�Z�~�R�����j�͓���Ȃ��ŉ������B</B></p>     
+<p>　<b>『P<font color="#FF0000">/</font>VNScripter』</b>で、スクリプトの特定位置に移動するときは、ラベルを使用します。<a href="#goto">goto命令</a>や<a href="#gosub">gosub命令</a>の引数にラベルを与えることで、スクリプトの読み込み位置を移動させることができます。ラベルとして認識されるのは、行の先頭に<b>“*”（アスタリスク）</b>があるところから、半角スペースまたはタブまたは改行があるところまでです。ラベルには全角文字と半角文字の両方使えますが、<B>半角の“,”（カンマ）、“;”（セミコロン）は入れないで下さい。</B></p>     
         
-<H4>1.1.6 �R�����g</H4>                         
+<H4>1.1.6 コメント</H4>                         
                        
-<p>�@<b>�wP<font color="#FF0000">/</font>VNScripter�x</b>�ł́A�e�s��<b>�g;�h�i�Z�~�R�����j</b>�ȍ~�́A�s���܂ł��R�����g�ƌ��Ȃ��܂��B�R�����g�̓X�N���v�g�̎��s�ɉ���e�����y�ڂ��Ȃ��̂ŁA���߂Ȃǂ������Ă����ƌ�X�֗��ł��B�������A�z�z����m�x���ł́A�t�@�C���e�ʂ�}���邽�ߍ폜���Ă������ق��������ł��傤�B</p>     
+<p>　<b>『P<font color="#FF0000">/</font>VNScripter』</b>では、各行の<b>“;”（セミコロン）</b>以降は、行末までをコメントと見なします。コメントはスクリプトの実行に何ら影響を及ぼさないので、注釈などを書いておくと後々便利です。ただし、配布するノベルでは、ファイル容量を抑えるため削除しておいたほうがいいでしょう。</p>     
         
 </blockquote>     
         
@@ -131,14 +131,14 @@ VISUALNOVEL SYSTEM�x</b>�̃��b�Z�[�W�\�����@�ɂ��Ă͓��\�t�g�̃��t�@�����X����
 <TR>     
 <TD class="text">                       
         
-<h3><a name="12"></a>1.2 �摜�̍쐬</h3>                                               
-<p>�@<b>�wP<font color="#FF0000">/</font>VNScripter�x</b>�ŕ\���ł���摜�́A<a href="http://www.piece-me.com/">P/ECE</a>�̕W���r�b�g�}�b�v�`���ł���A�g���q��<b>�g.pgd�h</b>�̃t�@�C���ł��BWindows�̕W���r�b�g�}�b�v�t�@�C���i�g���q�g.bmp�h�A���m�N��4�K���i<a href="#ld">�����G�摜</a>�A<a href="#lsp">�X�v���C�g�摜</a>�̏ꍇ�͂���ɉ����ē����F�j�j���ȉ��̃c�[���Ȃǂŕϊ����č쐬���܂��B</p>
+<h3><a name="12"></a>1.2 画像の作成</h3>                                               
+<p>　<b>『P<font color="#FF0000">/</font>VNScripter』</b>で表示できる画像は、<a href="http://www.piece-me.com/">P/ECE</a>の標準ビットマップ形式である、拡張子が<b>“.pgd”</b>のファイルです。Windowsの標準ビットマップファイル（拡張子“.bmp”、モノクロ4階調（<a href="#ld">立ち絵画像</a>、<a href="#lsp">スプライト画像</a>の場合はこれに加えて透明色））を以下のツールなどで変換して作成します。</p>
 <ul>
-  <li>BMP�R���o�[�^�iP/ECE�J�����ɕt���j</li>
-  <li>BMP2PGD�i<A href="http://www.jomon.ne.jp/~ymd3106/" target="_blank">�Ă�����</A>����j</li>
-  <li>P/ECE Bitmap Converter for Console�i<a href="http://www.geocities.jp/ryjenulloq/">�����ʂ�[��</a>����j</li>                                
+  <li>BMPコンバータ（P/ECE開発環境に付属）</li>
+  <li>BMP2PGD（<A href="http://www.jomon.ne.jp/~ymd3106/" target="_blank">ていこく</A>さん）</li>
+  <li>P/ECE Bitmap Converter for Console（<a href="http://www.geocities.jp/ryjenulloq/">じぇぬろーく</a>さん）</li>                                
 </ul>                           
-<p>�@�摜�̕\���ɂ��Ă�<a href="#23">�摜�\���n����</a>���Q�Ƃ��ĉ������B�Ȃ��A<b>�wP<font color="#FF0000">/</font>VNScripter�x</b>�����<a href="#bg">�w�i�摜</a>�A<a href="#ld">�����G�摜</a>�ɉ����A<a href="#lsp">�X�v���C�g�摜</a>��\���ł���悤�ɂȂ�܂����B                
+<p>　画像の表示については<a href="#23">画像表示系命令</a>を参照して下さい。なお、<b>『P<font color="#FF0000">/</font>VNScripter』</b>からは<a href="#bg">背景画像</a>、<a href="#ld">立ち絵画像</a>に加え、<a href="#lsp">スプライト画像</a>を表示できるようになりました。                
 </TD>                  
 </TR>                
 <TR>                
@@ -146,13 +146,13 @@ VISUALNOVEL SYSTEM�x</b>�̃��b�Z�[�W�\�����@�ɂ��Ă͓��\�t�g�̃��t�@�����X����
 </TR>                
 <TR>                
 <TD class="text">                                  
-<h3><a name="13"></a>1.3 ���ʉ��̍쐬</h3>                                             
-<p>�@<b>�wP<font color="#FF0000">/</font>VNScripter�x</b>�ŉ��t�ł�����ʉ��́A<a href="http://www.piece-me.com/">P/ECE</a>�̕W��PCM�`���ł���A�g���q��<b>�g.ppd�h</b>�̃t�@�C���ł��BWindows�̕W���T�E���h�t�@�C���i�g���q�g.wav�h�A16,000Hz�j���ȉ��̃c�[���Ȃǂŕϊ����č쐬���܂��B�Ȃ��AADPCM�ɂ��Ή����Ă��܂��B</p>
+<h3><a name="13"></a>1.3 効果音の作成</h3>                                             
+<p>　<b>『P<font color="#FF0000">/</font>VNScripter』</b>で演奏できる効果音は、<a href="http://www.piece-me.com/">P/ECE</a>の標準PCM形式である、拡張子が<b>“.ppd”</b>のファイルです。Windowsの標準サウンドファイル（拡張子“.wav”、16,000Hz）を以下のツールなどで変換して作成します。なお、ADPCMにも対応しています。</p>
 <ul>
-  <li>PCM�R���o�[�^�iP/ECE�J�����ɕt���j</li>
-  <li>�R���\�[����PCM�R���o�[�^�i<a href="http://piece.no-ip.org/">nsawa</a>����j</li>
+  <li>PCMコンバータ（P/ECE開発環境に付属）</li>
+  <li>コンソール版PCMコンバータ（<a href="http://piece.no-ip.org/">nsawa</a>さん）</li>
 </ul>
-<p>�@���ʉ��̉��t�ɂ��Ă�<a href="#24">���y�Đ��n����</a>���Q�Ƃ��ĉ������B
+<p>　効果音の演奏については<a href="#24">音楽再生系命令</a>を参照して下さい。
 </TD>  
 </TR>
 <TR>
@@ -160,14 +160,14 @@ VISUALNOVEL SYSTEM�x</b>�̃��b�Z�[�W�\�����@�ɂ��Ă͓��\�t�g�̃��t�@�����X����
 </TR>
 <TR>
 <TD class="text">                  
-<h3><a name="14"></a>1.4 BGM�̍쐬</h3>                                             
-<p>�@<b>�wP<font color="#FF0000">/</font>VNScripter�x</b>�ŉ��t�ł���BGM�́A<a href="http://www.piece-me.com/">P/ECE</a>�̕W�����y�`���ł���A�g���q��<b>�g.pmd�h</b>�̃t�@�C���ł��BP/ECE�p�ɏ�����MML�t�@�C���i�g���q�g.mml�h�j���ȉ��̂悤�ȃc�[���ŕϊ����č쐬���܂��BP/ECE�pMML�̏ڍׂ́AP/ECE�J�����̃h�L�������g�����ǂ݉������B</p>
+<h3><a name="14"></a>1.4 BGMの作成</h3>                                             
+<p>　<b>『P<font color="#FF0000">/</font>VNScripter』</b>で演奏できるBGMは、<a href="http://www.piece-me.com/">P/ECE</a>の標準音楽形式である、拡張子が<b>“.pmd”</b>のファイルです。P/ECE用に書いたMMLファイル（拡張子“.mml”）を以下のようなツールで変換して作成します。P/ECE用MMLの詳細は、P/ECE開発環境のドキュメントをお読み下さい。</p>
 <ul>
-  <li>mucc�iP/ECE�J�����ɕt���F\usr\PIECE\bin\mucc.exe�j</li>
-  <li>WinMucc�iP/ECE�J�����ɕt���F\usr\PIECE\bin\WinMucc.exe�j</li>
+  <li>mucc（P/ECE開発環境に付属：\usr\PIECE\bin\mucc.exe）</li>
+  <li>WinMucc（P/ECE開発環境に付属：\usr\PIECE\bin\WinMucc.exe）</li>
 </ul>
-<P>�@�t���[��pmd�t�@�C�������J���Ă���������܂��̂ŁA����𗘗p�����Ă��炤�̂������ł��傤�B<br>
-�@BGM�̉��t�ɂ��Ă�<a href="#24">���y�Đ��n����</a>���Q�Ƃ��ĉ������B
+<P>　フリーのpmdファイルを公開している方もいますので、それを利用させてもらうのもいいでしょう。<br>
+　BGMの演奏については<a href="#24">音楽再生系命令</a>を参照して下さい。
 </TD>  
 </TR>
 <TR>
@@ -175,8 +175,8 @@ VISUALNOVEL SYSTEM�x</b>�̃��b�Z�[�W�\�����@�ɂ��Ă͓��\�t�g�̃��t�@�����X����
 </TR>
 <TR>
 <TD class="text">                  
-<h3><a name="15"></a>1.5 ����e�X�g</h3>                                             
-<p>�@�����܂łō�����X�N���v�g�t�@�C���A�摜�A���ʉ��ABGM�t�@�C����P/ECE�ɓ]�����A<b>�wP<font color="#FF0000">/</font>VNScripter�x</b>���N�����邱�ƂŁA�r�W���A���m�x���𓮍삳���邱�Ƃ��ł��܂��B�N��������X�N���v�g�t�@�C����I��Ŏ��s���܂��B�r�W���A���m�x�����s���ɃX�N���v�g�ɃG���[������ƁA�Q�[���̐i�s���~�܂�̂ŁA�X�N���v�g�t�@�C����K�X�C�����čēxP/ECE�ɓ]�����ĉ������B</p>
+<h3><a name="15"></a>1.5 動作テスト</h3>                                             
+<p>　ここまでで作ったスクリプトファイル、画像、効果音、BGMファイルをP/ECEに転送し、<b>『P<font color="#FF0000">/</font>VNScripter』</b>を起動することで、ビジュアルノベルを動作させることができます。起動したらスクリプトファイルを選んで実行します。ビジュアルノベル実行中にスクリプトにエラーがあると、ゲームの進行が止まるので、スクリプトファイルを適宜修正して再度P/ECEに転送して下さい。</p>
 </TD>  
 </TR>
 <TR>
@@ -184,22 +184,22 @@ VISUALNOVEL SYSTEM�x</b>�̃��b�Z�[�W�\�����@�ɂ��Ă͓��\�t�g�̃��t�@�����X����
 </TR>
 <TR>
 <TD class="text">                  
-<h3><a name="16"></a>1.6 �t�@�C���̌���</h3>                                              
-<p>�@<b>�wP<font color="#FF0000">/</font>VNScripter�x</b>�́A�r�W���A���m�x���̓���ɕK�v�ȃt�@�C����1�ɂ܂Ƃ߂��p�b�P�[�W�t�@�C����ǂݍ���œ��삳���邱�Ƃ��ł��܂��B�p�b�P�[�W�t�@�C����p���邱�ƂŁA���[�U�ɂ��]������t�@�C����������₷���A�t���b�V���������̗e�ʂ𖳑ʂɂ����ɍςނƂ������_������܂��B<b>�wP<font color="#FF0000">/</font>VNScripter�xVer1.1�ȍ~</b>�ŔF���ł���p�b�P�[�W�t�@�C���̎�ށA����уp�b�P�[�W�t�@�C���쐬�c�[���ɂ͈ȉ��̂悤�ȕ�������܂��B</p>
+<h3><a name="16"></a>1.6 ファイルの結合</h3>                                              
+<p>　<b>『P<font color="#FF0000">/</font>VNScripter』</b>は、ビジュアルノベルの動作に必要なファイルを1つにまとめたパッケージファイルを読み込んで動作させることもできます。パッケージファイルを用いることで、ユーザにも転送するファイルが分かりやすく、フラッシュメモリの容量を無駄にせずに済むという利点があります。<b>『P<font color="#FF0000">/</font>VNScripter』Ver1.1以降</b>で認識できるパッケージファイルの種類、およびパッケージファイル作成ツールには以下のような物があります。</p>
 <ul>
-  <li>fpk - P/ECE�̕W���t�@�C���p�b�N�`���ł��B    
+  <li>fpk - P/ECEの標準ファイルパック形式です。    
     <ul>
-      <li>filepack�iP/ECE�J�����ɕt���F\usr\PIECE\bin\FilePack.exe�j</li>
-      <li>fpkTool�i<A href="http://hara-yan-web.hp.infoseek.co.jp/" target="_blank">�͂���</A>����j</li>
-      <li>�R���\�[����FilePack���[�e�B���e�B�i<a href="http://piece.no-ip.org/" target="_blank">nsawa</a>����j</li>
+      <li>filepack（P/ECE開発環境に付属：\usr\PIECE\bin\FilePack.exe）</li>
+      <li>fpkTool（<A href="http://hara-yan-web.hp.infoseek.co.jp/" target="_blank">はらやん</A>さん）</li>
+      <li>コンソール版FilePackユーティリティ（<a href="http://piece.no-ip.org/" target="_blank">nsawa</a>さん）</li>
     </ul>
   </li>
-  <li>pva - <a href="#31">pvnspack</a>�ň��k�����g���t�@�C���p�b�N�`���ł��B�g�p���@�ɂ��Ă�<a href="#31">Appendix�Fpvnspack</a>�����Q�Ɖ������B</li>      
-  <li>par - par�i<a href="http://www.autch.net/" target="_blank">Yui N.</a>����j�ň��k�����g���t�@�C���p�b�N�`���ł��BLZSS���k�AZlib     
-    Deflate���k�A�����k�̑S�ĂɑΉ����Ă��܂��B</li>  
+  <li>pva - <a href="#31">pvnspack</a>で圧縮した拡張ファイルパック形式です。使用方法については<a href="#31">Appendix：pvnspack</a>をご参照下さい。</li>      
+  <li>par - par（<a href="http://www.autch.net/" target="_blank">Yui N.</a>さん）で圧縮した拡張ファイルパック形式です。LZSS圧縮、Zlib     
+    Deflate圧縮、無圧縮の全てに対応しています。</li>  
 </ul> 
-<p>������p���āA�쐬�����r�W���A���m�x���̃X�N���v�g�A�摜�A���ʉ��ABGM�̃t�@�C����1�̃p�b�N�t�@�C���ɂ܂Ƃ߂܂��B���̎��A<b>�p�b�P�[�W�t�@�C���̃t�@�C�����͊g���q�̑O�܂ŃX�N���v�g�t�@�C���Ɠ����t�@�C�����ɂ��ĉ������B</b><BR>
-�y��z�X�N���v�g���gexample.pvn�h�Ȃ�gexample.fpk�h�B</p> 
+<p>これらを用いて、作成したビジュアルノベルのスクリプト、画像、効果音、BGMのファイルを1つのパックファイルにまとめます。この時、<b>パッケージファイルのファイル名は拡張子の前までスクリプトファイルと同じファイル名にして下さい。</b><BR>
+【例】スクリプトが“example.pvn”なら“example.fpk”。</p> 
 </TD>   
 </TR> 
 <TR>                      
@@ -208,17 +208,17 @@ VISUALNOVEL SYSTEM�x</b>�̃��b�Z�[�W�\�����@�ɂ��Ă͓��\�t�g�̃��t�@�����X����
 <TR>                      
 <TD class="text">                      
                       
-<H2><A name="2"></A>2.���߈ꗗ</H2>                
+<H2><A name="2"></A>2.命令一覧</H2>                
 <BLOCKQUOTE>      
-<P>2.1 <a href="#21"> ���b�Z�[�W�\���n����</a><br>               
-2.2 <a href="#22">����n����</a><BR>                   
-2.3 <a href="#23">��ʕ\���n����</a><BR>                   
-2.4 <a href="#24">���y�Đ��n����</a><BR>                   
-2.5 <a href="#25">�ϐ����Z�n����</a>                   
+<P>2.1 <a href="#21"> メッセージ表示系命令</a><br>               
+2.2 <a href="#22">制御系命令</a><BR>                   
+2.3 <a href="#23">画面表示系命令</a><BR>                   
+2.4 <a href="#24">音楽再生系命令</a><BR>                   
+2.5 <a href="#25">変数演算系命令</a>                   
 </BLOCKQUOTE>              
                              
-<P>��<b>�wP<font color="#FF0000">/</font>VNScripter�x</b>��<b>�wP<font color="#FF0000">/</font>ECE                 
-VISUALNOVEL SYSTEM�x</b>�Ŗ��߂̋������قȂ�ꍇ������܂��B�ڂ����͊e���߂̃��t�@�����X�������������B                   
+<P>※<b>『P<font color="#FF0000">/</font>VNScripter』</b>と<b>『P<font color="#FF0000">/</font>ECE                 
+VISUALNOVEL SYSTEM』</b>で命令の挙動が異なる場合があります。詳しくは各命令のリファレンスをご覧下さい。                   
                              
 </TD>                             
 </TR>                             
@@ -228,68 +228,68 @@ VISUALNOVEL SYSTEM�x</b>�Ŗ��߂̋������قȂ�ꍇ������܂��B�ڂ����͊e���߂̃��t
 <tr>           
 <TD class="text">                            
                             
-<H3><A name="21"></A>2.1&nbsp;���b�Z�[�W�\���n����</H3>                       
+<H3><A name="21"></A>2.1&nbsp;メッセージ表示系命令</H3>                       
 <BLOCKQUOTE>                       
   <H4><a name="br"></a>2.1.1 br</H4>                             
-  <P><b>�yP<font color="#FF0000">/</font>VNScripter�V���߁z</b>���b�Z�[�W���ŋ�s��}�����܂��B</P>            
+  <P><b>【P<font color="#FF0000">/</font>VNScripter新命令】</b>メッセージ中で空行を挿入します。</P>            
   <BLOCKQUOTE class="script">           
     <p>br</p>           
   </BLOCKQUOTE>                      
   <H4><a name="clickstr"></a>2.1.2 clickstr</H4>                            
-  <P><b>�yP<font color="#FF0000">/</font>VNScripter�V���߁z</b>�X�N���v�g���ɃL�[�҂������񂪌��ꂽ���A�����I��A�{�^����҂��ă��b�Z�[�W���肵�܂��B���b�Z�[�W�E�B���h�E�̎c��s�����y�[�W����s���ȉ��̏ꍇ�AA�{�^����҂��ăy�[�W���肵�܂��B�ꎞ�I�Ɍ��ʂ������������ꍇ�̓X�N���v�g���̊Y�������̑O��<b>�g_�h</b>�����ĉ������B</P>            
-  <BLOCKQUOTE class="script">clickstr &quot;�L�[�҂�������&quot;,                 
-    �y�[�W����s��<br>           
-    �L�[�҂������� -                 
-    ���b�Z�[�W����҂����镶���̗���B�S�p8�����܂ŁB<br>           
-    �y�[�W����s�� -                 
-    ���b�Z�[�W�E�B���h�E�̎c��s�����y�[�W����s���ȉ��̏ꍇ�A���b�Z�[�W����ł͂Ȃ��y�[�W����ɂ��܂��B                 
-    - �ϐ��B          
-    <p>�y�g�p��z<br>    
-    clickstr &quot;�B�I�H�v&quot;, 2<br>         
+  <P><b>【P<font color="#FF0000">/</font>VNScripter新命令】</b>スクリプト中にキー待ち文字列が現れた時、自動的にAボタンを待ってメッセージ送りします。メッセージウィンドウの残り行数がページ送り行数以下の場合、Aボタンを待ってページ送りします。一時的に効果を解除したい場合はスクリプト内の該当文字の前に<b>“_”</b>を入れて下さい。</P>            
+  <BLOCKQUOTE class="script">clickstr &quot;キー待ち文字列&quot;,                 
+    ページ送り行数<br>           
+    キー待ち文字列 -                 
+    メッセージ送り待ちする文字の羅列。全角8文字まで。<br>           
+    ページ送り行数 -                 
+    メッセージウィンドウの残り行数がページ送り行数以下の場合、メッセージ送りではなくページ送りにします。                 
+    - 変数可。          
+    <p>【使用例】<br>    
+    clickstr &quot;。！？」&quot;, 2<br>         
     ;         
-    �B�I�H�v�̂����ꂩ���\�������Ƃ��A���b�Z�[�W����҂�����B<br>   
+    。！？」のいずれかが表示されるとき、メッセージ送り待ちする。<br>   
     ;         
-    ���b�Z�[�W�E�B���h�E�̎c��s����2�s�ȉ��Ȃ�L�[�҂���y�[�W���肷��B</p>   
+    メッセージウィンドウの残り行数が2行以下ならキー待ち後ページ送りする。</p>   
   </BLOCKQUOTE>                    
   <H4><a name="sel"></a>2.1.3 sel</H4>                     
-  <P>�@�I������\�����ăv���C���[�ɑI�����������ʂɂ���āA�w�肳�ꂽ���x���Ɉړ����܂��B�I�������͍ő�ŃE�B���h�E�̍s���܂łł��B���ݕ\�����̃��b�Z�[�W�ƑI�������̍��v���E�B���h�E�̍s�����z����ꍇ�A���A�{�^����҂��A�y�[�W���肵�܂��B<br>
-  <b>�yP<font color="#FF0000">/</font>VNScripter�V�d�l�z</b>�I�������ŕϐ����g�p���邱�Ƃ��ł��܂��B</P> 
+  <P>　選択肢を表示してプレイヤーに選択させた結果によって、指定されたラベルに移動します。選択肢数は最大でウィンドウの行数までです。現在表示中のメッセージと選択肢数の合計がウィンドウの行数を越える場合、先にAボタンを待ち、ページ送りします。<br>
+  <b>【P<font color="#FF0000">/</font>VNScripter新仕様】</b>選択肢内で変数を使用することができます。</P> 
   <BLOCKQUOTE class="script">sel                          
-    &quot;�I����1&quot;, *���x��1, &quot;�I����2&quot;, *���x��2�c<BR>                        
-    �I���� -                          
-    1�s�ɕ\���ł��镶�����ȓ��̕�����B&nbsp;</BLOCKQUOTE>                     
+    &quot;選択肢1&quot;, *ラベル1, &quot;選択肢2&quot;, *ラベル2…<BR>                        
+    選択肢 -                          
+    1行に表示できる文字数以内の文字列。&nbsp;</BLOCKQUOTE>                     
   <H4><a name="setwin"></a>2.1.4 setwin</H4>                             
-  <P><b>�yP<font color="#FF0000">/</font>VNScripter�V���߁z</b>���b�Z�[�W�E�B���h�E�̐ݒ��ύX���܂��B�����͔C�ӂɏȗ��\�ł��B<b>�f�t�H���g�͉�����A3�s�A�W���t�H���g�A���ł��B</b></P>            
-  <BLOCKQUOTE class="script">setwin [�ʒu] [, [�s��] [, [�t�H���g] ,                 
-    [�F]]]<br>           
-    �ʒu - 0:�ォ��A1:������B8�s�̏ꍇ�͖��������B -                 
-    �ϐ��B<br>           
-    �s�� - 1�`8�B - �ϐ��B<br>                
-    �t�H���g - 0:�W���t�H���g�i10�~10�h�b�g�j�A1:�k���t�H���g�i8�~10�h�b�g�j�B                 
-    - �ϐ��B<br>                
-    �F - 0:���A1:���B�����F�̓E�B���h�E�F�Ƌt�B - �ϐ��B          
-    <p>�y�g�p��z<br>    
+  <P><b>【P<font color="#FF0000">/</font>VNScripter新命令】</b>メッセージウィンドウの設定を変更します。引数は任意に省略可能です。<b>デフォルトは下から、3行、標準フォント、黒です。</b></P>            
+  <BLOCKQUOTE class="script">setwin [位置] [, [行数] [, [フォント] ,                 
+    [色]]]<br>           
+    位置 - 0:上から、1:下から。8行の場合は無視される。 -                 
+    変数可。<br>           
+    行数 - 1～8。 - 変数可。<br>                
+    フォント - 0:標準フォント（10×10ドット）、1:縮小フォント（8×10ドット）。                 
+    - 変数可。<br>                
+    色 - 0:白、1:黒。文字色はウィンドウ色と逆。 - 変数可。          
+    <p>【使用例】<br>    
     setwin 1, 3, 0, 1 ;         
-    ������A3�s�A�W���t�H���g�A���ɐݒ肷��B<br>   
+    下から、3行、標準フォント、黒に設定する。<br>   
     setwin 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;         
-    �ォ��ɐݒ肷��B<br>   
-    setwin , 8, , 0&nbsp;&nbsp; ; 8�s�i�S��ʁj�A���ɐݒ肷��B</p>        
+    上からに設定する。<br>   
+    setwin , 8, , 0&nbsp;&nbsp; ; 8行（全画面）、白に設定する。</p>        
   </BLOCKQUOTE>           
   <H4>2.1.5 font</H4>                           
-  <P>�@��ʂɕ\������t�H���g��ύX���܂��B�W���t�H���g�i10�~10�h�b�g�j����1�s��12�����A�k���t�H���g�i8�~10�h�b�g�j����1�s��15�����\���ł��܂��B�؂�ւ��͈��ʒP�ʂȂ̂ŁA���ߎ��s���Ƀ��b�Z�[�W�E�B���h�E�ɕ������c���Ă���ꍇ�́A���A�{�^����҂��ăy�[�W���肵�Ă���ύX����܂��B<b>�f�t�H���g�͕W���t�H���g�ł��B</b><br>
-  <font color="#FF0000"><b>�y�񐄏��z</b></font><a href="#setwin">setwin , 
-  , 0</a>�܂���<a href="#setwin">setwin , , 1</a>�Ɠ����ł��B</P> 
-  <BLOCKQUOTE class="script">font �t���O<BR>                          
-    �t���O - 0:�W���t�H���g�A1:�k���t�H���g�B - �ϐ��B</BLOCKQUOTE>                           
+  <P>　画面に表示するフォントを変更します。標準フォント（10×10ドット）だと1行に12文字、縮小フォント（8×10ドット）だと1行に15文字表示できます。切り替えは一画面単位なので、命令実行時にメッセージウィンドウに文字が残っている場合は、先にAボタンを待ってページ送りしてから変更されます。<b>デフォルトは標準フォントです。</b><br>
+  <font color="#FF0000"><b>【非推奨】</b></font><a href="#setwin">setwin , 
+  , 0</a>または<a href="#setwin">setwin , , 1</a>と等価です。</P> 
+  <BLOCKQUOTE class="script">font フラグ<BR>                          
+    フラグ - 0:標準フォント、1:縮小フォント。 - 変数可。</BLOCKQUOTE>                           
   <H4>2.1.6 mode</H4>                             
-  <P>�@���b�Z�[�W�E�B���h�E�̃��[�h��ύX���܂��B3�s�E�B���h�E���[�h���Ɖ�����3�s�̃E�B���h�E�A�S��ʃ��[�h����8�s�̃E�B���h�E��\�����܂��B�؂�ւ��͈��ʒP�ʂȂ̂ŁA���ߎ��s���Ƀ��b�Z�[�W�E�B���h�E�ɕ������c���Ă���ꍇ�́A���A�{�^����҂��ăy�[�W���肵�Ă���ύX����܂��B<b>�f�t�H���g��3�s�E�B���h�E���[�h�ł��B</b><br>
-  <font color="#FF0000"><b>�y�񐄏��z</b></font><a href="#setwin">setwin 1, 
-  3</a>�܂���<a href="#setwin">setwin , 8</a>�Ɠ����ł��B</P> 
-  <BLOCKQUOTE class="script">mode �t���O<BR>                          
-    �t���O - 0:3�s�E�B���h�E���[�h�A0�ȊO:�S��ʃ��[�h�B -                           
-    �ϐ��B</BLOCKQUOTE>                       
+  <P>　メッセージウィンドウのモードを変更します。3行ウィンドウモードだと下から3行のウィンドウ、全画面モードだと8行のウィンドウを表示します。切り替えは一画面単位なので、命令実行時にメッセージウィンドウに文字が残っている場合は、先にAボタンを待ってページ送りしてから変更されます。<b>デフォルトは3行ウィンドウモードです。</b><br>
+  <font color="#FF0000"><b>【非推奨】</b></font><a href="#setwin">setwin 1, 
+  3</a>または<a href="#setwin">setwin , 8</a>と等価です。</P> 
+  <BLOCKQUOTE class="script">mode フラグ<BR>                          
+    フラグ - 0:3行ウィンドウモード、0以外:全画面モード。 -                           
+    変数可。</BLOCKQUOTE>                       
   <H4>2.1.7 winoff</H4>                              
-  <P>���b�Z�[�W�E�B���h�E���������邽�߁A���b�Z�[�W���������܂��B</P>            
+  <P>メッセージウィンドウを消去するため、メッセージを消去します。</P>            
   <BLOCKQUOTE class="script">winoff</BLOCKQUOTE>             
 </BLOCKQUOTE>             
                   
@@ -301,98 +301,98 @@ VISUALNOVEL SYSTEM�x</b>�Ŗ��߂̋������قȂ�ꍇ������܂��B�ڂ����͊e���߂̃��t
 <TR>                   
 <TD class="text">                            
                             
-<H3><a name="22"></a>2.2&nbsp;����n����</H3>                       
+<H3><a name="22"></a>2.2&nbsp;制御系命令</H3>                       
 <BLOCKQUOTE>                       
   <H4><A name="wait"></A>2.2.1 wait</H4>                              
-  <P><b>�yP<font color="#FF0000">/</font>VNScripter�V�d�l�z</b>10ms�P�ʂŃE�F�C�g�������A�X�N���v�g�̑��������s�����̂�҂��܂��B<br>           
-  <b><font color="#FF0000">�y�񐄏��z</font></b>���b�Z�[�W�\������<a href="#112">!d�����!w</a>���g�p��������D�܂����ł��B<br>           
-  <b>�yP<font color="#FF0000">/</font>ECE VISUALNOVEL SYSTEM�z</b>�҂����Ԃ��~100ms�ƂȂ�܂��B</P>            
-  <BLOCKQUOTE class="script">wait �҂����� [, �t���O]<BR>                        
-    �҂����� - �~10ms�B�ϐ��B<BR>                        
-    �t���O -                          
-    0:�҂����Ԓ���A�{�^����������Ă��E�F�C�g���I�����Ȃ��i<a href="#112">!w</a>�����j�A1:�҂����Ԓ���A�{�^���������ꂽ��E�F�C�g���I������i<a href="#112">!d</a>�����j�B�ȗ�����0�B                          
-    - �ϐ��B</BLOCKQUOTE>                            
+  <P><b>【P<font color="#FF0000">/</font>VNScripter新仕様】</b>10ms単位でウェイトをかけ、スクリプトの続きが実行されるのを待ちます。<br>           
+  <b><font color="#FF0000">【非推奨】</font></b>メッセージ表示時は<a href="#112">!dおよび!w</a>を使用する方が好ましいです。<br>           
+  <b>【P<font color="#FF0000">/</font>ECE VISUALNOVEL SYSTEM】</b>待ち時間が×100msとなります。</P>            
+  <BLOCKQUOTE class="script">wait 待ち時間 [, フラグ]<BR>                        
+    待ち時間 - ×10ms。変数可。<BR>                        
+    フラグ -                          
+    0:待ち時間中にAボタンが押されてもウェイトを終了しない（<a href="#112">!w</a>相当）、1:待ち時間中にAボタンが押されたらウェイトを終了する（<a href="#112">!d</a>相当）。省略時は0。                          
+    - 変数可。</BLOCKQUOTE>                            
   <H4><A name="goto"></A>2.2.2 goto</H4>                             
-  <P>�@�w�肳�ꂽ���x���Ɉړ����܂��B</P> 
-  <BLOCKQUOTE class="script">goto *���x��</BLOCKQUOTE>                            
+  <P>　指定されたラベルに移動します。</P> 
+  <BLOCKQUOTE class="script">goto *ラベル</BLOCKQUOTE>                            
   <H4>2.2.3 ongoto</H4>                      
-  <P>�@�ϐ��̒l�ɉ����āA���ꂼ��w�肳�ꂽ���x���Ɉړ����܂��B�ϐ��̒l�ɑΉ����郉�x�����Ȃ��ꍇ�́A�ړ������ɑ����̃X�N���v�g�����s���܂��B</P> 
-  <BLOCKQUOTE class="script">ongoto {%|$}�ϐ�, [*���x��0], [*���x��1]�c<BR>                  
-    �ϐ� -                           
-    %0�`%255�i���[�J���ϐ��j�A�܂���$0�`$15�i�O���[�o���ϐ��j�B<BR>                     
-    ���x�� -                    
-    ���ꂼ��A�ϐ��̒l��0�̎��A1�̎��c�̔�ѐ�B�ȗ��B     
-    <p>�y�g�p��z<br>    
+  <P>　変数の値に応じて、それぞれ指定されたラベルに移動します。変数の値に対応するラベルがない場合は、移動せずに続きのスクリプトを実行します。</P> 
+  <BLOCKQUOTE class="script">ongoto {%|$}変数, [*ラベル0], [*ラベル1]…<BR>                  
+    変数 -                           
+    %0～%255（ローカル変数）、または$0～$15（グローバル変数）。<BR>                     
+    ラベル -                    
+    それぞれ、変数の値が0の時、1の時…の飛び先。省略可。     
+    <p>【使用例】<br>    
     ongoto %0, *x=0, *x=1, , *x=3</p>         
   </BLOCKQUOTE>                    
   <H4><A name="gosub"></A>2.2.4 gosub</H4>                             
-  <P>�@�w�肳�ꂽ���x���ɁA�T�u���[�`���Ƃ��Ĉړ����܂��B�T�u���[�`������߂�Ƃ��͕K��<A href="#return">return</A><A href="#return">����</A>�ŋA���Ă���悤�ɂ��ĉ������B<br>
-  <b>�yP<font color="#FF0000">/</font>VNScripter�V�d�l�z</b>�T�u���[�`���p�̃X�^�b�N��8�Ȃ̂ŁA9�K�w�ȏ�̃T�u���[�`���̓X�^�b�N�I�[�o�[�ŃG���[�ɂȂ�܂��B</P> 
-  <BLOCKQUOTE class="script">gosub *���x��</BLOCKQUOTE>                            
+  <P>　指定されたラベルに、サブルーチンとして移動します。サブルーチンから戻るときは必ず<A href="#return">return</A><A href="#return">命令</A>で帰ってくるようにして下さい。<br>
+  <b>【P<font color="#FF0000">/</font>VNScripter新仕様】</b>サブルーチン用のスタックは8個なので、9階層以上のサブルーチンはスタックオーバーでエラーになります。</P> 
+  <BLOCKQUOTE class="script">gosub *ラベル</BLOCKQUOTE>                            
   <H4>2.2.5 ongosub</H4>                           
-  <P>�@�ϐ��̒l�ɉ����āA���ꂼ��w�肳�ꂽ���x���ɃT�u���[�`���Ƃ��Ĉړ����܂��B�T�u���[�`������߂�Ƃ��͕K��<a href="#return">return����</a>�ŋA���Ă���悤�ɂ��ĉ������B�ϐ��̒l�ɑΉ����郉�x����������Ă��Ȃ��ꍇ�́A�ړ������ɑ����̃X�N���v�g�����s���܂��B<br>
-  <b>�yP<font color="#FF0000">/</font>VNScripter�V�d�l�z</b>�T�u���[�`���p�̃X�^�b�N��8�Ȃ̂ŁA9�K�w�ȏ�̃T�u���[�`���̓X�^�b�N�I�[�o�[�ŃG���[�ɂȂ�܂��B</P> 
-  <BLOCKQUOTE class="script">ongosub {%|$}�ϐ�, [*���x��0], [*���x��1]�c<BR>                  
-    �ϐ� -                           
-    %0�`%255�i���[�J���ϐ��j�A�܂���$0�`$15�i�O���[�o���ϐ��j�B<BR>                     
-    ���x�� -                    
-    ���ꂼ��A�ϐ��̒l��0�̎��A1�̎��c�̔�ѐ�B�ȗ��B     
-    <p>�y�g�p��z<br>    
+  <P>　変数の値に応じて、それぞれ指定されたラベルにサブルーチンとして移動します。サブルーチンから戻るときは必ず<a href="#return">return命令</a>で帰ってくるようにして下さい。変数の値に対応するラベルが書かれていない場合は、移動せずに続きのスクリプトを実行します。<br>
+  <b>【P<font color="#FF0000">/</font>VNScripter新仕様】</b>サブルーチン用のスタックは8個なので、9階層以上のサブルーチンはスタックオーバーでエラーになります。</P> 
+  <BLOCKQUOTE class="script">ongosub {%|$}変数, [*ラベル0], [*ラベル1]…<BR>                  
+    変数 -                           
+    %0～%255（ローカル変数）、または$0～$15（グローバル変数）。<BR>                     
+    ラベル -                    
+    それぞれ、変数の値が0の時、1の時…の飛び先。省略可。     
+    <p>【使用例】<br>    
     ongosub $0, *x=0, *x=1, , *x=3</p>         
   </BLOCKQUOTE>                    
   <H4><A name="return"></A>2.2.6 return</H4>                             
-  <P>�@<A href="#gosub">gosub</A><A href="#gosub">����</A>�ňړ������悩��߂��Ă��܂��B<a href="#gosub">gosub����</a>���g�p���Ă��Ȃ��ꍇ�̓G���[�ɂȂ�܂��B</P> 
+  <P>　<A href="#gosub">gosub</A><A href="#gosub">命令</A>で移動した先から戻ってきます。<a href="#gosub">gosub命令</a>を使用していない場合はエラーになります。</P> 
   <BLOCKQUOTE class="script">return</BLOCKQUOTE>    
   <H4>2.2.7 if</H4>            
-  <P>�@�ϐ��̑召�֌W�Ȃǂ̏������ɂ��āA���ꂪ�^�Ȃ�΍s���܂ł̈ȍ~�̃X�N���v�g�����s���A�U�Ȃ�Ύ��s�����Ɏ��̍s�܂ňړ����܂��B&amp;�i�_���ρj�ɂ��ẮAif���߂�2���ׂ邱�ƂőΉ����ĉ������B</P> 
-  <BLOCKQUOTE class="script">if ���� �X�N���v�g�c<BR>                        
-    ���� - �ϐ� �����܂��͕s���� �ϐ� �Ƃ����`���B                        
+  <P>　変数の大小関係などの条件式について、それが真ならば行末までの以降のスクリプトを実行し、偽ならば実行せずに次の行まで移動します。&amp;（論理積）については、if命令を2つ並べることで対応して下さい。</P> 
+  <BLOCKQUOTE class="script">if 条件 スクリプト…<BR>                        
+    条件 - 変数 等号または不等号 変数 という形式。                        
     <TABLE border="1">                   
       <TR>                   
         <TD><FONT color="#008000">=</FONT></TD>                   
         <TD><FONT color="#008000">==</FONT></TD>                   
-        <TD><FONT color="#008000">A��B��������</FONT></TD>                   
+        <TD><FONT color="#008000">AとBが等しい</FONT></TD>                   
         <TD><FONT color="#008000">&lt;&gt;</FONT></TD>                   
         <TD><FONT color="#008000">!=</FONT></TD>                   
-        <TD><FONT color="#008000">A��B���������Ȃ�</FONT></TD>                   
+        <TD><FONT color="#008000">AとBが等しくない</FONT></TD>                   
       </TR>                   
       <TR>                   
         <TD><FONT color="#008000">&lt;</FONT></TD>                   
-        <TD>�@</TD>
-        <TD><FONT color="#008000">A��B��菬����</FONT></TD>
+        <TD>　</TD>
+        <TD><FONT color="#008000">AはBより小さい</FONT></TD>
         <TD><FONT color="#008000">&gt;</FONT></TD>
-        <TD>�@</TD>
-        <TD><FONT color="#008000">A��B���傫��</FONT></TD>
+        <TD>　</TD>
+        <TD><FONT color="#008000">AはBより大きい</FONT></TD>
       </TR>
       <TR>
         <TD><FONT color="#008000">&lt;=</FONT></TD>
         <TD><FONT color="#008000">=&lt;</FONT></TD>
-        <TD><FONT color="#008000">A��B�ȉ��ł���</FONT></TD>
+        <TD><FONT color="#008000">AはB以下である</FONT></TD>
         <TD><FONT color="#008000">&gt;=</FONT></TD>
         <TD><FONT color="#008000">=&gt;</FONT></TD>
-        <TD><FONT color="#008000">A��B�ȏ�ł���</FONT></TD>
+        <TD><FONT color="#008000">AはB以上である</FONT></TD>
       </TR>
-    </TABLE>�y�g�p��z<br>
-    if %0 == 0 �ϐ����O�̓[���ł�\ ;        
-    �����ɓ��Ă͂܂鎞�̂݃��b�Z�[�W��\������B  
+    </TABLE>【使用例】<br>
+    if %0 == 0 変数％０はゼロです\ ;        
+    条件に当てはまる時のみメッセージを表示する。  
   </BLOCKQUOTE>    
   <H4>2.2.8 save</H4>                            
-  <P>�@�Z�[�u�̋��E�s����ύX���܂��B���̖��߂����s����O�ɁA<A href="#savefile">savefile</A><A href="#savefile">����</A>�ŃZ�[�u�t�@�C�����`���ĉ������B�Z�[�u�t�@�C�����`�������_�ł́A�Z�[�u�͋�����Ă��܂��B</P> 
-  <BLOCKQUOTE class="script">save �t���O<BR>                         
-    �t���O - 0:�s���A1:���B - �ϐ��B</BLOCKQUOTE>                           
+  <P>　セーブの許可・不許可を変更します。この命令を実行する前に、<A href="#savefile">savefile</A><A href="#savefile">命令</A>でセーブファイルを定義して下さい。セーブファイルを定義した時点では、セーブは許可されています。</P> 
+  <BLOCKQUOTE class="script">save フラグ<BR>                         
+    フラグ - 0:不許可、1:許可。 - 変数可。</BLOCKQUOTE>                           
   <H4><A name="savefile"></A>2.2.9 savefile</H4>                            
-  <P>�@�Z�[�u�t�@�C�������`���A�Z�[�u�������܂��B�����ɁA�O���[�o���ϐ���ǂݍ��݂܂��B�Y�����閼�O�̃t�@�C�����Ȃ��ꍇ�A�V�K�쐬���܂��B�Y�����閼�O�̃t�@�C���������Ă��w�b�_���قȂ�ꍇ�i<b>�wP<font color="#FF0000">/</font>ECE                 
-  VISUALNOVEL SYSTEM�x</b>�ō쐬�����Z�[�u�t�@�C���Ȃǁj�A�G���[�ɂȂ�̂Œ��ӂ��ĉ������B<b>�y�Q�l�F<A href="#31">Appendix                 
-  3.1</A>�z</b></P>            
-  <BLOCKQUOTE class="script">savefile &quot;�Z�[�u�t�@�C����&quot;</BLOCKQUOTE>                           
+  <P>　セーブファイル名を定義し、セーブを許可します。同時に、グローバル変数を読み込みます。該当する名前のファイルがない場合、新規作成します。該当する名前のファイルがあってもヘッダが異なる場合（<b>『P<font color="#FF0000">/</font>ECE                 
+  VISUALNOVEL SYSTEM』</b>で作成したセーブファイルなど）、エラーになるので注意して下さい。<b>【参考：<A href="#31">Appendix                 
+  3.1</A>】</b></P>            
+  <BLOCKQUOTE class="script">savefile &quot;セーブファイル名&quot;</BLOCKQUOTE>                           
   <H4>2.2.10 title</H4>                         
-  <P>�@�u�ŏ�����v�Ɓu���[�h�v���I���ł��郁�j���[���\������܂��B<A href="#savefile">savefile����</A>�ŃZ�[�u�t�@�C�����`���Ă��Ȃ��ꍇ�A�u���[�h�v�͑I���ł��܂���B</P> 
+  <P>　「最初から」と「ロード」が選択できるメニューが表示されます。<A href="#savefile">savefile命令</A>でセーブファイルを定義していない場合、「ロード」は選択できません。</P> 
   <BLOCKQUOTE class="script">title</BLOCKQUOTE>  
   <H4>2.2.11 end</H4>     
-  <P>�@�m�x���̎��s���I�����܂��B�X�N���v�g�t�@�C���̏I�[�܂ł����Ύ����I�ɏI������̂ŁA�r���ŏI�����������̂łȂ���΁A�����I�ɏ����K�v�͂���܂���B</P> 
+  <P>　ノベルの実行を終了します。スクリプトファイルの終端までいけば自動的に終了するので、途中で終了させたいのでなければ、明示的に書く必要はありません。</P> 
   <BLOCKQUOTE class="script">end</BLOCKQUOTE>  
   <H4><a name="debug"></a>2.2.12 debug</H4>                            
-  <P><b>�yP<font color="#FF0000">/</font>VNScripter�V���߁z</b>�f�o�b�O���[�h�ŃX�N���v�g�����s���܂��B�f�o�b�O���[�h�ł́A�X�N���v�g���s���ɃG���[���������Ă��A�I�������ɂ��̂܂ܑ��s����܂��B</P>           
+  <P><b>【P<font color="#FF0000">/</font>VNScripter新命令】</b>デバッグモードでスクリプトを実行します。デバッグモードでは、スクリプト実行中にエラーが発生しても、終了せずにそのまま続行されます。</P>           
   <BLOCKQUOTE class="script">
     <p>debug</p> 
   </BLOCKQUOTE>                          
@@ -406,65 +406,65 @@ VISUALNOVEL SYSTEM�x</b>�Ŗ��߂̋������قȂ�ꍇ������܂��B�ڂ����͊e���߂̃��t
 <TR> 
 <TD class="text">         
          
-<H3><A name="23"></A>2.3 ��ʕ\���n����</H3>                               
+<H3><A name="23"></A>2.3 画面表示系命令</H3>                               
 <BLOCKQUOTE>                          
   <H4><a name="bg"></a>2.3.1 bg</H4>                               
-  <P>�@�w�i�ɉ摜��\���A�������͔w�i��P�F�Ńx�^�h�肵�܂��B�w�i�摜��2bit�}�X�N�����܂���2bit�}�X�N�t���ō쐬���ĉ������B2bit�}�X�N�����̕����t�@�C���T�C�Y�I�ɍD�܂����ł��B�摜�T�C�Y����ʂ�菬�����ꍇ�́A��ʂ����ς��ɕ~���l�߂܂��B<br>
-  <b>�yP<font color="#FF0000">/</font>VNScripter�V�d�l�z</b>�摜�t�@�C���̊g���q��<b>�g.pgd�h</b>�̏ꍇ�A�g���q���ȗ��ł��܂��B</P> 
-  <BLOCKQUOTE class="script">bg &quot;�摜�t�@�C����&quot;                          
-    <P>bg �w�i�F                             
+  <P>　背景に画像を表示、もしくは背景を単色でベタ塗りします。背景画像は2bitマスク無しまたは2bitマスク付きで作成して下さい。2bitマスク無しの方がファイルサイズ的に好ましいです。画像サイズが画面より小さい場合は、画面いっぱいに敷き詰めます。<br>
+  <b>【P<font color="#FF0000">/</font>VNScripter新仕様】</b>画像ファイルの拡張子が<b>“.pgd”</b>の場合、拡張子を省略できます。</P> 
+  <BLOCKQUOTE class="script">bg &quot;画像ファイル名&quot;                          
+    <P>bg 背景色                             
     <BR>                        
-    �w�i�F - 0:���A1:���D�F�A2:�Z�D�F�A3:���B -                             
-    �ϐ��B</P>                     
+    背景色 - 0:白、1:薄灰色、2:濃灰色、3:黒。 -                             
+    変数可。</P>                     
   </BLOCKQUOTE>                        
   <H4><a name="ld"></a>2.3.2 ld</H4>                              
-  <P>�@�����G�摜��\�����܂��B�摜��2bit�}�X�N�t���ō쐬���ĉ������B�w�肵���ʒu�Ɋ��ɉ摜���\������Ă���ꍇ�A���̉摜���������ĕ\�����܂��B�摜�͉��[�ɌŒ肳���悤�ɕ\������܂��B<br>
-  <b>�yP<font color="#FF0000">/</font>VNScripter�V�d�l�z</b>�摜�t�@�C���̊g���q��<b>�g.pgd�h</b>�̏ꍇ�A�g���q���ȗ��ł��܂��B</P> 
-  <BLOCKQUOTE class="script">ld &quot;�摜�t�@�C����&quot;, �ʒu                            
+  <P>　立ち絵画像を表示します。画像は2bitマスク付きで作成して下さい。指定した位置に既に画像が表示されている場合、その画像を消去して表示します。画像は下端に固定されるように表示されます。<br>
+  <b>【P<font color="#FF0000">/</font>VNScripter新仕様】</b>画像ファイルの拡張子が<b>“.pgd”</b>の場合、拡張子を省略できます。</P> 
+  <BLOCKQUOTE class="script">ld &quot;画像ファイル名&quot;, 位置                            
     <BR>                       
-    �ʒu - 0:���A1:�����A2:�E�B - �ϐ��B</BLOCKQUOTE>                             
+    位置 - 0:左、1:中央、2:右。 - 変数可。</BLOCKQUOTE>                             
   <H4>2.3.3 cl</H4>                              
-  <P>�@�����G�摜���������܂��B</P> 
-  <BLOCKQUOTE class="script">cl {�ʒu}                            
+  <P>　立ち絵画像を消去します。</P> 
+  <BLOCKQUOTE class="script">cl {位置}                            
     <BR>                       
-    �ʒu - 0:���A1:�����A2:�E�B�ȗ����͑S�ď����B -                
-    �ϐ��B</BLOCKQUOTE>                      
+    位置 - 0:左、1:中央、2:右。省略時は全て消去。 -                
+    変数可。</BLOCKQUOTE>                      
   <H4>2.3.4 zorder</H4>                              
-  <P>�@�����G�\���ɂ����鉜�s�����w�肵�܂��B�O�Ɏw�肵���ʒu���珇�ɁA�\�����������A���قǁA��O�ƂȂ�܂��B������Ԃł͉����獶�A�E�A�����ƂȂ��Ă��܂��B</P> 
-  <BLOCKQUOTE class="script">zorder �ʒu1, �ʒu2, �ʒu3                            
+  <P>　立ち絵表示における奥行きを指定します。前に指定した位置から順に、表示順序が奥、中ほど、手前となります。初期状態では奥から左、右、中央となっています。</P> 
+  <BLOCKQUOTE class="script">zorder 位置1, 位置2, 位置3                            
     <BR>                       
-    �ʒu1�`3 - 0:���A1:�����A2:�E�B - �ϐ��B</BLOCKQUOTE>                              
+    位置1～3 - 0:左、1:中央、2:右。 - 変数可。</BLOCKQUOTE>                              
   <H4><a name="lsp"></a>2.3.5 lsp</H4>                             
-  <P><b>�yP<font color="#FF0000">/</font>VNScripter�V���߁z</b>�X�v���C�g�摜��<b>�\�����</b>�œo�^���܂��B�摜��2bit�}�X�N�t���ō쐬���ĉ������B�w�肵��ID�ɉ摜���o�^����Ă���ꍇ�A���̉摜��o�^�������ēo�^���܂��B<b></b>�摜�t�@�C���̊g���q��<b>�g.pgd�h</b>�̏ꍇ�A�g���q���ȗ��ł��܂��B</P>           
-  <BLOCKQUOTE class="script">lsp &quot;�摜�t�@�C����&quot;, ID, x���W,                
-    y���W                      
+  <P><b>【P<font color="#FF0000">/</font>VNScripter新命令】</b>スプライト画像を<b>表示状態</b>で登録します。画像は2bitマスク付きで作成して下さい。指定したIDに画像が登録されている場合、その画像を登録解除して登録します。<b></b>画像ファイルの拡張子が<b>“.pgd”</b>の場合、拡張子を省略できます。</P>           
+  <BLOCKQUOTE class="script">lsp &quot;画像ファイル名&quot;, ID, x座標,                
+    y座標                      
     <BR>                      
-    ID - 0�`2�B - �ϐ��B<br>                
-    x���W, y���W - �ϐ��B</BLOCKQUOTE>                            
+    ID - 0～2。 - 変数可。<br>                
+    x座標, y座標 - 変数可。</BLOCKQUOTE>                            
   <H4>2.3.6 lsph</H4>                             
-  <P><b>�yP<font color="#FF0000">/</font>VNScripter�V���߁z</b>�X�v���C�g�摜��<b>��\�����</b>�œo�^���܂��B�摜��2bit�}�X�N�t���ō쐬���ĉ������B�w�肵��ID�ɉ摜���o�^����Ă���ꍇ�A���̉摜��o�^�������ēo�^���܂��B�摜�t�@�C���̊g���q��<b>�g.pgd�h</b>�̏ꍇ�A�g���q���ȗ��ł��܂��B</P>           
-  <BLOCKQUOTE class="script">lsph &quot;�摜�t�@�C����&quot;, ID, x���W,                
-    y���W                      
+  <P><b>【P<font color="#FF0000">/</font>VNScripter新命令】</b>スプライト画像を<b>非表示状態</b>で登録します。画像は2bitマスク付きで作成して下さい。指定したIDに画像が登録されている場合、その画像を登録解除して登録します。画像ファイルの拡張子が<b>“.pgd”</b>の場合、拡張子を省略できます。</P>           
+  <BLOCKQUOTE class="script">lsph &quot;画像ファイル名&quot;, ID, x座標,                
+    y座標                      
     <BR>                      
-    ID - 0�`2�B - �ϐ��B<br>                
-    x���W, y���W - �ϐ��B</BLOCKQUOTE>                            
+    ID - 0～2。 - 変数可。<br>                
+    x座標, y座標 - 変数可。</BLOCKQUOTE>                            
   <H4>2.3.7 vsp</H4>                             
-  <P><b>�yP<font color="#FF0000">/</font>VNScripter�V���߁z</b>�X�v���C�g�摜�̕\����ԁA�ʒu��ύX���܂��B</P>          
-  <BLOCKQUOTE class="script">vsp ID, [�t���O] [, [x���W] [, [y���W]]]                          
+  <P><b>【P<font color="#FF0000">/</font>VNScripter新命令】</b>スプライト画像の表示状態、位置を変更します。</P>          
+  <BLOCKQUOTE class="script">vsp ID, [フラグ] [, [x座標] [, [y座標]]]                          
     <BR>                     
-    ID - 0�`2�B - �ϐ��B<br>                
-    �t���O - 0:��\���A1:�\���B - �ϐ��B<br>                
-    x���W, y���W - �ϐ��B          
-    <p>�y�g�p��z<br>    
+    ID - 0～2。 - 変数可。<br>                
+    フラグ - 0:非表示、1:表示。 - 変数可。<br>                
+    x座標, y座標 - 変数可。          
+    <p>【使用例】<br>    
     vsp 0, 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ;        
-    0�Ԃ̃X�v���C�g��\���ݒ�ɂ���B<br>   
-    vsp 1, , 40, 20 ; 1�Ԃ̃X�v���C�g�̕\���ʒu��(20, 20)�ɂ���B</p>        
+    0番のスプライトを表示設定にする。<br>   
+    vsp 1, , 40, 20 ; 1番のスプライトの表示位置を(20, 20)にする。</p>        
   </BLOCKQUOTE>                      
   <H4>2.3.8 csp</H4>                            
-  <P><b>�yP<font color="#FF0000">/</font>VNScripter�V���߁z</b>�X�v���C�g�摜��o�^�������܂��B</P>          
+  <P><b>【P<font color="#FF0000">/</font>VNScripter新命令】</b>スプライト画像を登録解除します。</P>          
   <BLOCKQUOTE class="script">csp {ID}                           
     <BR>                      
-    ID - 0�`2�B�ȗ����͑S�ēo�^�����B - �ϐ��B</BLOCKQUOTE>                            
+    ID - 0～2。省略時は全て登録解除。 - 変数可。</BLOCKQUOTE>                            
 </BLOCKQUOTE>                      
                            
 </TD>                           
@@ -475,26 +475,26 @@ VISUALNOVEL SYSTEM�x</b>�Ŗ��߂̋������قȂ�ꍇ������܂��B�ڂ����͊e���߂̃��t
 <TR>                    
 <TD class="text">                            
                             
-<H3><A name="24"></A>2.4 ���y�Đ��n����</H3>                              
+<H3><A name="24"></A>2.4 音楽再生系命令</H3>                              
 <BLOCKQUOTE>                         
   <H4>2.4.1 snd</H4>                             
-  <P>�@P/ECE�p�ɕϊ��������ʉ��t�@�C�����Đ����܂��B�����ɍĐ��ł��鉹����3ch�ł��B�w�肵��ch�ł��łɌ��ʉ������Ă���ꍇ�A������~���ĐV�����w�肵���t�@�C�����Đ����܂��B<b>���ʉ��Đ��I����A����ch�Ō��ʉ����Đ�����܂ł̓�������Ƀt�@�C���f�[�^���c��d�l�Ȃ̂ŁA�Đ����I��������ɖ����I��<A href="#sndstop">sndstop</A><A href="#sndstop">����</A>���g�����Ƃ𐄏����܂��B</b><br>
-  <b>�yP<font color="#FF0000">/</font>VNScripter�V�d�l�z</b>�摜�t�@�C���̊g���q��<b>�g.ppd�h</b>�̏ꍇ�A�g���q���ȗ��ł��܂��B</P>
-  <BLOCKQUOTE class="script">snd &quot;���ʉ��t�@�C����&quot;,{ch}                             
+  <P>　P/ECE用に変換した効果音ファイルを再生します。同時に再生できる音声は3chです。指定したchですでに効果音が鳴っている場合、それを停止して新しく指定したファイルを再生します。<b>効果音再生終了後、同じchで効果音を再生するまではメモリ上にファイルデータが残る仕様なので、再生が終わった頃に明示的に<A href="#sndstop">sndstop</A><A href="#sndstop">命令</A>を使うことを推奨します。</b><br>
+  <b>【P<font color="#FF0000">/</font>VNScripter新仕様】</b>画像ファイルの拡張子が<b>“.ppd”</b>の場合、拡張子を省略できます。</P>
+  <BLOCKQUOTE class="script">snd &quot;効果音ファイル名&quot;,{ch}                             
     <BR>                        
-    ch - 1�`3�B -                           
-    �ϐ��B���w��̏ꍇ��ch1�B</BLOCKQUOTE>                      
+    ch - 1～3。 -                           
+    変数可。無指定の場合はch1。</BLOCKQUOTE>                      
   <H4><A name="sndstop"></A>2.4.2 sndstop</H4>                            
-  <P>�@���ʉ��̉��t���~���A��������������܂��B</P> 
+  <P>　効果音の演奏を停止し、メモリを解放します。</P> 
   <BLOCKQUOTE class="script">sndstop {ch}                            
     <BR>                       
-    ch - 1�`3�B���w��̏ꍇ�͑Sch���~�B - �ϐ��B</BLOCKQUOTE>                           
+    ch - 1～3。無指定の場合は全chを停止。 - 変数可。</BLOCKQUOTE>                           
   <H4>2.4.3 bgm</H4>                            
-  <P>�@P/ECE�p�ɕϊ�����BGM�t�@�C�������t���܂��B���ł�BGM�����Ă���ꍇ�A������~���ĐV�����w�肵���t�@�C�������t���܂��B<br>
-  <b>�yP<font color="#FF0000">/</font>VNScripter�V�d�l�z</b>�摜�t�@�C���̊g���q��<b>�g.pmd�h</b>�̏ꍇ�A�g���q���ȗ��ł��܂��B</P> 
-  <BLOCKQUOTE class="script">bgm &quot;BGM�t�@�C����&quot;</BLOCKQUOTE>                            
+  <P>　P/ECE用に変換したBGMファイルを演奏します。すでにBGMが鳴っている場合、それを停止して新しく指定したファイルを演奏します。<br>
+  <b>【P<font color="#FF0000">/</font>VNScripter新仕様】</b>画像ファイルの拡張子が<b>“.pmd”</b>の場合、拡張子を省略できます。</P> 
+  <BLOCKQUOTE class="script">bgm &quot;BGMファイル名&quot;</BLOCKQUOTE>                            
   <H4>2.4.4 bgmstop</H4>                       
-  <P>�@BGM�̉��t���~���܂��B</P> 
+  <P>　BGMの演奏を停止します。</P> 
   <BLOCKQUOTE class="script">bgmstop</BLOCKQUOTE>   
 </BLOCKQUOTE>  
        
@@ -506,121 +506,121 @@ VISUALNOVEL SYSTEM�x</b>�Ŗ��߂̋������قȂ�ꍇ������܂��B�ڂ����͊e���߂̃��t
 <TR>        
 <TD class="text">        
         
-<H3><a name="25"></a>2.5 �ϐ����Z�n����</H3>                            
+<H3><a name="25"></a>2.5 変数演算系命令</H3>                            
 <BLOCKQUOTE>                       
   <H4>2.5.1 set</H4>                            
-  <P>�@�ϐ��ɒl�������܂��B</P>
-  <BLOCKQUOTE class="script">set {%|$}�ϐ�, �������l                           
+  <P>　変数に値を代入します。</P>
+  <BLOCKQUOTE class="script">set {%|$}変数, 代入する値                           
     <BR>                      
-    �ϐ� -                           
-    %0�`%255�i���[�J���ϐ��j�A�܂���$0�`$15�i�O���[�o���ϐ��j�B<BR>                     
-    �������l - �ϐ��B          
-    <p>�y�g�p��z<br>    
-    set %0, 1&nbsp; ; �ϐ�%0��1��������B<br>        
-    set $0, %0 ; �O���[�o���ϐ�$0�ɕϐ�%0�̒l��������B</p>        
+    変数 -                           
+    %0～%255（ローカル変数）、または$0～$15（グローバル変数）。<BR>                     
+    代入する値 - 変数可。          
+    <p>【使用例】<br>    
+    set %0, 1&nbsp; ; 変数%0に1を代入する。<br>        
+    set $0, %0 ; グローバル変数$0に変数%0の値を代入する。</p>        
   </BLOCKQUOTE>                    
   <H4>2.5.2 rnd</H4>                            
-  <P>�@�ϐ��Ɏw�肵���͈͓��̗����������܂��B</P>
-  <BLOCKQUOTE class="script">rnd {%|$}�ϐ�, ���                           
+  <P>　変数に指定した範囲内の乱数を代入します。</P>
+  <BLOCKQUOTE class="script">rnd {%|$}変数, 上限                           
     <BR>                      
-    �ϐ� -                           
-    %0�`%255�i���[�J���ϐ��j�A�܂���$0�`$15�i�O���[�o���ϐ��j�B<BR>                     
-    ��� - 0�`(���-1)�͈̔͂ŗ������^������B -                           
-    �ϐ��B<P>rnd {%|$}�ϐ�, ����, ���<BR>                         
-    �����A��� - �����`(���-1)�͈̔͂ŗ������^������B                           
-    - �ϐ��B</P>                          
-    <P>�y�g�p��z<br>    
+    変数 -                           
+    %0～%255（ローカル変数）、または$0～$15（グローバル変数）。<BR>                     
+    上限 - 0～(上限-1)の範囲で乱数が与えられる。 -                           
+    変数可。<P>rnd {%|$}変数, 下限, 上限<BR>                         
+    下限、上限 - 下限～(上限-1)の範囲で乱数が与えられる。                           
+    - 変数可。</P>                          
+    <P>【使用例】<br>    
     rnd %0, 3&nbsp;&nbsp;&nbsp; ;        
-    �ϐ�%0��0�`2�͈̗̔͂�����������B<br>   
+    変数%0に0～2の範囲の乱数を代入する。<br>   
     rnd $0, 1, 5 ;        
-    �O���[�o���ϐ�$0��1�`4�͈̗̔͂�����������B</P>                   
+    グローバル変数$0に1～4の範囲の乱数を代入する。</P>                   
   </BLOCKQUOTE>                    
   <H4>2.5.3 add</H4>                            
-  <P>�@�ϐ��ɒl�����Z���܂��B�܂��́A2�l�����Z�������ʂ�ϐ��ɑ�����܂��B</P>
-  <BLOCKQUOTE class="script">add {%|$}�ϐ�, ���Z���鐔                           
+  <P>　変数に値を加算します。または、2値を加算した結果を変数に代入します。</P>
+  <BLOCKQUOTE class="script">add {%|$}変数, 加算する数                           
     <BR>                      
-    �ϐ� -                           
-    %0�`%255�i���[�J���ϐ��j�A�܂���$0�`$15�i�O���[�o���ϐ��j�B<BR>                     
-    ���Z����l - �ϐ��B<P>add {%|$}�ϐ�, ���Z�����l, ���Z����l<BR>                         
-    ���Z�����l�A���Z����l - �ϐ��B</P>                          
-    <P>�y�g�p��z<br>    
-    add %0, 2&nbsp;&nbsp;&nbsp;&nbsp; ; �ϐ�%0��2���Z����B<br>        
-    add $0, %1, 3 ; �O���[�o���ϐ�$0��%1�{3�̘a��������B</P>                        
+    変数 -                           
+    %0～%255（ローカル変数）、または$0～$15（グローバル変数）。<BR>                     
+    加算する値 - 変数可。<P>add {%|$}変数, 加算される値, 加算する値<BR>                         
+    加算される値、加算する値 - 変数可。</P>                          
+    <P>【使用例】<br>    
+    add %0, 2&nbsp;&nbsp;&nbsp;&nbsp; ; 変数%0に2加算する。<br>        
+    add $0, %1, 3 ; グローバル変数$0に%1＋3の和を代入する。</P>                        
   </BLOCKQUOTE>                    
   <H4>2.5.4 inc</H4>                           
-  <P>�@�ϐ��ɒl��1���Z���܂��B</P>
-  <BLOCKQUOTE class="script">inc {%|$}�ϐ�                          
+  <P>　変数に値を1加算します。</P>
+  <BLOCKQUOTE class="script">inc {%|$}変数                          
     <BR>                     
-    �ϐ� -                           
-    %0�`%255�i���[�J���ϐ��j�A�܂���$0�`$15�i�O���[�o���ϐ��j�B     
-    <p>�y�g�p��z<br>    
-    inc %0 ; �ϐ�%0��1���Z����B</p>        
+    変数 -                           
+    %0～%255（ローカル変数）、または$0～$15（グローバル変数）。     
+    <p>【使用例】<br>    
+    inc %0 ; 変数%0を1加算する。</p>        
   </BLOCKQUOTE>                    
   <H4>2.5.5 sub</H4>                            
-  <P>�@�ϐ�����l�����Z���܂��B�܂��́A2�l�����Z�������ʂ�ϐ��ɑ�����܂��B</P>
-  <BLOCKQUOTE class="script">sub {%|$}�ϐ�, ���Z����l                           
+  <P>　変数から値を減算します。または、2値を減算した結果を変数に代入します。</P>
+  <BLOCKQUOTE class="script">sub {%|$}変数, 減算する値                           
     <BR>                      
-    �ϐ� -                           
-    %0�`%255�i���[�J���ϐ��j�A�܂���$0�`$15�i�O���[�o���ϐ��j�B<BR>                     
-    ���Z����l - �ϐ��B<P>sub {%|$}�ϐ�, ���Z�����l, ���Z����l<BR>                         
-    ���Z�����l�A���Z����l - �ϐ��B</P>                          
-    <P>�y�g�p��z<br>    
-    sub %0, 2&nbsp;&nbsp;&nbsp;&nbsp; ; �ϐ�%0����2���Z����B<br>        
-    sub $0, %1, 3 ; �O���[�o���ϐ�$0��%1�|3�̍���������B</P>                        
+    変数 -                           
+    %0～%255（ローカル変数）、または$0～$15（グローバル変数）。<BR>                     
+    減算する値 - 変数可。<P>sub {%|$}変数, 減算される値, 減算する値<BR>                         
+    減算される値、減算する値 - 変数可。</P>                          
+    <P>【使用例】<br>    
+    sub %0, 2&nbsp;&nbsp;&nbsp;&nbsp; ; 変数%0から2減算する。<br>        
+    sub $0, %1, 3 ; グローバル変数$0に%1－3の差を代入する。</P>                        
   </BLOCKQUOTE>                    
   <H4>2.5.6 dec</H4>                           
-  <P>�@�ϐ�����l��1���Z���܂��B</P>
-  <BLOCKQUOTE class="script">dec {%|$}�ϐ�                          
+  <P>　変数から値を1減算します。</P>
+  <BLOCKQUOTE class="script">dec {%|$}変数                          
     <BR>                     
-    �ϐ� -                           
-    %0�`%255�i���[�J���ϐ��j�A�܂���$0�`$15�i�O���[�o���ϐ��j�B<P>�y�g�p��z<br>    
-    dec %0 ; �ϐ�%0����1���Z����B</P>                        
+    変数 -                           
+    %0～%255（ローカル変数）、または$0～$15（グローバル変数）。<P>【使用例】<br>    
+    dec %0 ; 変数%0から1減算する。</P>                        
   </BLOCKQUOTE>                    
   <H4>2.5.7 mul</H4>                            
-  <P>�@�ϐ��ɒl����Z���܂��B�܂��́A2�l����Z�������ʂ�ϐ��ɑ�����܂��B</P>
-  <BLOCKQUOTE class="script">mul {%|$}�ϐ�, ��Z����l                           
+  <P>　変数に値を乗算します。または、2値を乗算した結果を変数に代入します。</P>
+  <BLOCKQUOTE class="script">mul {%|$}変数, 乗算する値                           
     <BR>                      
-    �ϐ� -                           
-    %0�`%255�i���[�J���ϐ��j�A�܂���$0�`$15�i�O���[�o���ϐ��j�B<BR>                     
-    ��Z����l - �ϐ��B<P>mul {%|$}�ϐ�, ��Z�����l, ��Z����l<BR>                         
-    ��Z�����l�A��Z����l - �ϐ��B</P>                          
-    <P>�y�g�p��z<br>    
-    mul %0, 2&nbsp;&nbsp;&nbsp;&nbsp; ; �ϐ�%0��2��Z����B<br>        
+    変数 -                           
+    %0～%255（ローカル変数）、または$0～$15（グローバル変数）。<BR>                     
+    乗算する値 - 変数可。<P>mul {%|$}変数, 乗算される値, 乗算する値<BR>                         
+    乗算される値、乗算する値 - 変数可。</P>                          
+    <P>【使用例】<br>    
+    mul %0, 2&nbsp;&nbsp;&nbsp;&nbsp; ; 変数%0に2乗算する。<br>        
     mul $0, %1, 3 ;        
-    �O���[�o���ϐ�$0��%1�~3�̐ς�������B&nbsp;</P>                   
+    グローバル変数$0に%1×3の積を代入する。&nbsp;</P>                   
   </BLOCKQUOTE>                    
   <H4>2.5.8 div</H4>                            
-  <P>�@�ϐ�����l�����Z���܂��B�]��͐؂�̂Ă܂��B�܂��́A2�l�����Z�������ʂ�ϐ��ɑ�����܂��B</P>
-  <BLOCKQUOTE class="script">div {%|$}�ϐ�, ���Z����l                           
+  <P>　変数から値を除算します。余りは切り捨てます。または、2値を除算した結果を変数に代入します。</P>
+  <BLOCKQUOTE class="script">div {%|$}変数, 除算する値                           
     <BR>                      
-    �ϐ� -                           
-    %0�`%255�i���[�J���ϐ��j�A�܂���$0�`$15�i�O���[�o���ϐ��j�B<BR>                     
-    ���Z����l - �ϐ��B<P>div {%|$}�ϐ�, ���Z�����l, ���Z����l<BR>                         
-    ���Z�����l�A���Z����l - �ϐ��B</P>                          
-    <P>�y�g�p��z<br>    
-    div %0, 2&nbsp;&nbsp;&nbsp;&nbsp; ; �ϐ�%0����2���Z����B<br>        
-    div $0, %1, 3 ; �O���[�o���ϐ�$0��%1��3�̏���������B</P>                        
+    変数 -                           
+    %0～%255（ローカル変数）、または$0～$15（グローバル変数）。<BR>                     
+    除算する値 - 変数可。<P>div {%|$}変数, 減算される値, 減算する値<BR>                         
+    除算される値、除算する値 - 変数可。</P>                          
+    <P>【使用例】<br>    
+    div %0, 2&nbsp;&nbsp;&nbsp;&nbsp; ; 変数%0から2除算する。<br>        
+    div $0, %1, 3 ; グローバル変数$0に%1÷3の商を代入する。</P>                        
   </BLOCKQUOTE>                    
   <H4>2.5.9 mod</H4>                            
-  <P>�@�ϐ�����l�����Z�����]��������܂��B�܂��́A2�l�����Z���Z�����]���ϐ��ɑ�����܂��B</P>
-  <BLOCKQUOTE class="script">mod {%|$}�ϐ�, ���Z����l                           
+  <P>　変数から値を除算した余りを代入します。または、2値を除算減算した余りを変数に代入します。</P>
+  <BLOCKQUOTE class="script">mod {%|$}変数, 除算する値                           
     <BR>                      
-    �ϐ� -                           
-    %0�`%255�i���[�J���ϐ��j�A�܂���$0�`$15�i�O���[�o���ϐ��j�B<BR>                     
-    ���Z����l - �ϐ��B<P>mod {%|$}�ϐ�, ���Z�����l, ���Z����l<BR>                         
-    ���Z�����l�A���Z����l - �ϐ��B</P>                          
-    <P>�y�g�p��z<br>    
+    変数 -                           
+    %0～%255（ローカル変数）、または$0～$15（グローバル変数）。<BR>                     
+    除算する値 - 変数可。<P>mod {%|$}変数, 除算される値, 除算する値<BR>                         
+    除算される値、除算する値 - 変数可。</P>                          
+    <P>【使用例】<br>    
     mod %0, 2&nbsp;&nbsp;&nbsp;&nbsp; ;        
-    �ϐ�%0��%0��2�̗]���������B<br>   
-    mod $0, %1, 3 ; �O���[�o���ϐ�$0��%1��3�̗]���������B</P>                        
+    変数%0に%0÷2の余りを代入する。<br>   
+    mod $0, %1, 3 ; グローバル変数$0に%1÷3の余りを代入する。</P>                        
   </BLOCKQUOTE>                    
   <H4>2.5.10 swap</H4>                            
-  <P>�@�ϐ��ɑ������Ă���l�����ւ��܂��B</P>
-  <BLOCKQUOTE class="script">swap {%|$}�ϐ�1, {%|$}�ϐ�2                           
+  <P>　変数に代入されている値を入れ替えます。</P>
+  <BLOCKQUOTE class="script">swap {%|$}変数1, {%|$}変数2                           
     <BR>                      
-    �ϐ� -                           
-    %0�`%255�i���[�J���ϐ��j�A�܂���$0�`$15�i�O���[�o���ϐ��j�B<P>�y�g�p��z<br>    
-    swap %0, %1 ; �ϐ�%0�ƕϐ�%1�̒��g�����ւ���B</P>                        
+    変数 -                           
+    %0～%255（ローカル変数）、または$0～$15（グローバル変数）。<P>【使用例】<br>    
+    swap %0, %1 ; 変数%0と変数%1の中身を入れ替える。</P>                        
   </BLOCKQUOTE>                    
 </BLOCKQUOTE>                     
                           
@@ -635,7 +635,7 @@ VISUALNOVEL SYSTEM�x</b>�Ŗ��߂̋������قȂ�ꍇ������܂��B�ڂ����͊e���߂̃��t
 <H2><A name="3"></A>3.Appendix</H2>               
 <BLOCKQUOTE>             
 <P>3.1 <a href="#31">pvnspack</a><br>             
-3.2 <a href="#31">�Z�[�u�t�@�C���d�l</a>                   
+3.2 <a href="#31">セーブファイル仕様</a>                   
 </BLOCKQUOTE>              
                             
 </TD>                          
@@ -647,10 +647,10 @@ VISUALNOVEL SYSTEM�x</b>�Ŗ��߂̋������قȂ�ꍇ������܂��B�ڂ����͊e���߂̃��t
 <TD class="text">                             
                             
 <H4><a name="31"></a>3.1 pvnspack</H4>                     
-<P>�@<b>�wpvnspack�x</b>�́A<b>�wP<font color="#FF0000">/</font>VNScripter�x</b>�����<b>�wP<font color="#FF0000">/</font>ECE 
-VISUALNOVEL SYSTEM�xVer2.x</b>�œ��삷��g���t�@�C���p�b�N�`���̃p�b�P�[�W�t�@�C�����쐬����R���\�[���c�[���ł��B�R�}���h�v�����v�g��</P>    
-  <BLOCKQUOTE class="script">&gt; pvnspack �t�@�C����1 �t�@�C����2 �c</BLOCKQUOTE>                          
-<P>�Ɠ��͂���ƁA�w�肵���t�@�C���Ɋg���q<b>�g.pvn�h</b>�̂��̂��܂܂��ꍇ�A�o�̓t�@�C������<b>�g�i�g���q�̑O�܂œ������O�j.pva�h</b>�Ƃ����p�b�P�[�W�t�@�C�����쐬����܂��B�t�@�C�����w��ɂ̓��C���h�J�[�h���g�p�ł��܂��B</P>            
+<P>　<b>『pvnspack』</b>は、<b>『P<font color="#FF0000">/</font>VNScripter』</b>および<b>『P<font color="#FF0000">/</font>ECE 
+VISUALNOVEL SYSTEM』Ver2.x</b>で動作する拡張ファイルパック形式のパッケージファイルを作成するコンソールツールです。コマンドプロンプトで</P>    
+  <BLOCKQUOTE class="script">&gt; pvnspack ファイル名1 ファイル名2 …</BLOCKQUOTE>                          
+<P>と入力すると、指定したファイルに拡張子<b>“.pvn”</b>のものが含まれる場合、出力ファイル名が<b>“（拡張子の前まで同じ名前）.pva”</b>というパッケージファイルが作成されます。ファイル名指定にはワイルドカードも使用できます。</P>            
   <BLOCKQUOTE class="script">&gt; pvnspack *.pvn *.pgd *.ppd *.pmd</BLOCKQUOTE>                          
 </TD>             
 </tr>
@@ -660,272 +660,272 @@ VISUALNOVEL SYSTEM�xVer2.x</b>�œ��삷��g���t�@�C���p�b�N�`���̃p�b�P�[�W�t�@�C
 <TR>                     
 <TD class="text">                     
                     
-<H4><a name="32"></a>3.2 �Z�[�u�t�@�C���d�l</H4>                      
-<P>�@�Z�[�u�t�@�C���̎d�l�ł��B�T�C�Y��1�Z�N�^�i4096bytes�j�ł��B���܂����p����ƁA�m�x���Ƒ��̃A�v����A��������Ƃ������Ƃ��\�ł��B�e�\���̂ɂ��Ă�<a href="common.html" target="_blank">�w�b�_�t�@�C����Y�t</a>���܂��̂ł��Q�Ɖ������B<b><br>
-���wP<font color="#FF0000">/</font>VNScripter�xVer1.1</b>�̃Z�[�u�t�@�C���́A<b>�wP<font color="#FF0000">/</font>VNScripter�xVer1.0</b>�A<b>�wP<font color="#FF0000">/</font>ECE    
-VISUALNOVEL SYSTEM�xVer1.x</b>�����<b>2.x</b>�Ƃ̌݊����͂���܂���̂ł����Ӊ������B</P>    
+<H4><a name="32"></a>3.2 セーブファイル仕様</H4>                      
+<P>　セーブファイルの仕様です。サイズは1セクタ（4096bytes）です。うまく利用すると、ノベルと他のアプリを連動させるということも可能です。各構造体については<a href="common.html" target="_blank">ヘッダファイルを添付</a>しますのでご参照下さい。<b><br>
+※『P<font color="#FF0000">/</font>VNScripter』Ver1.1</b>のセーブファイルは、<b>『P<font color="#FF0000">/</font>VNScripter』Ver1.0</b>、<b>『P<font color="#FF0000">/</font>ECE    
+VISUALNOVEL SYSTEM』Ver1.x</b>および<b>2.x</b>との互換性はありませんのでご注意下さい。</P>    
 <BLOCKQUOTE>    
   <TABLE border="1">    
     <TR>    
-      <TH>����</TH>   
-      <TH>�I�t�Z�b�g</TH>   
-      <TH>�T�C�Y</TH>   
-      <TH>�^</TH>  
-      <TH>���e</TH>  
+      <TH>項目</TH>   
+      <TH>オフセット</TH>   
+      <TH>サイズ</TH>   
+      <TH>型</TH>  
+      <TH>内容</TH>  
     </TR>  
     <TR>  
-      <TD rowspan="3" align="left">�O���[�o��</TD>  
+      <TD rowspan="3" align="left">グローバル</TD>  
       <TD class="number">0</TD>  
       <TD class="number">4</TD>  
       <TD>char[4]</TD>  
-      <TD>�t�@�C���w�b�_�i�gPVSS�h�j</TD>  
+      <TD>ファイルヘッダ（“PVSS”）</TD>  
     </TR>  
     <TR>  
       <TD class="number">4</TD>  
       <TD class="number">32</TD>  
       <TD>short[16]</TD>  
-      <TD>�O���[�o���ϐ��i$0�`$15�j</TD>  
+      <TD>グローバル変数（$0～$15）</TD>  
     </TR>  
     <TR>  
       <TD class="number">36</TD>  
       <TD class="number">220</TD>  
-      <TD>�@</TD> 
-      <TD>�i�g�p�\�薳���j</TD> 
+      <TD>　</TD> 
+      <TD>（使用予定無し）</TD> 
     </TR> 
     <tr>
-      <TD align="left" rowspan="3">�Z�[�u1</TD> 
+      <TD align="left" rowspan="3">セーブ1</TD> 
       <TD class="number">256</TD> 
       <TD class="number">8</TD> 
       <TD>PCETIME</TD> 
-      <TD>�Z�[�u����</TD> 
+      <TD>セーブ時刻</TD> 
     </tr>
     <tr>
       <TD class="number">264</TD> 
       <TD class="number">1056</TD> 
       <TD><a href="#save_data">SAVE_DATA</a></TD> 
-      <TD>�Z�[�u�f�[�^</TD> 
+      <TD>セーブデータ</TD> 
     </tr>
     <tr>
       <TD class="number">1320</TD> 
       <TD class="number">216</TD> 
-      <TD>�@</TD> 
-      <TD>�i�\��j</TD> 
+      <TD>　</TD> 
+      <TD>（予約）</TD> 
     </tr>
     <tr>
-      <TD align="left" rowspan="3">�Z�[�u1</TD> 
+      <TD align="left" rowspan="3">セーブ1</TD> 
       <TD class="number">1536</TD> 
       <TD class="number">8</TD> 
       <TD>PCETIME</TD> 
-      <TD>�Z�[�u����</TD> 
+      <TD>セーブ時刻</TD> 
     </tr>
     <tr>
       <TD class="number">1544</TD> 
       <TD class="number">1056</TD> 
       <TD><a href="#save_data">SAVE_DATA</a></TD> 
-      <TD>�Z�[�u�f�[�^</TD> 
+      <TD>セーブデータ</TD> 
     </tr>
     <tr>
       <TD class="number">2600</TD> 
       <TD class="number">216</TD> 
-      <TD>�@</TD> 
-      <TD>�i�\��j</TD> 
+      <TD>　</TD> 
+      <TD>（予約）</TD> 
     </tr>
     <tr>
-      <TD align="left" rowspan="3">�Z�[�u1</TD> 
+      <TD align="left" rowspan="3">セーブ1</TD> 
       <TD class="number">2816</TD> 
       <TD class="number">8</TD> 
       <TD>PCETIME</TD> 
-      <TD>�Z�[�u����</TD> 
+      <TD>セーブ時刻</TD> 
     </tr>
     <tr>
       <TD class="number">2824</TD> 
       <TD class="number">1056</TD> 
       <TD><a href="#save_data">SAVE_DATA</a></TD> 
-      <TD>�Z�[�u�f�[�^</TD> 
+      <TD>セーブデータ</TD> 
     </tr>
     <tr>
       <TD class="number">3880</TD> 
       <TD class="number">216</TD> 
-      <TD>�@</TD> 
-      <TD>�i�\��j</TD> 
+      <TD>　</TD> 
+      <TD>（予約）</TD> 
     </tr>
   </TABLE> 
-  <h5><a name="save_data"></a>SAVE_DATA�^�ɂ���</h5>
+  <h5><a name="save_data"></a>SAVE_DATA型について</h5>
   <table border="1">
     <tr>
-      <TH>�I�t�Z�b�g</TH>  
-      <TH>�T�C�Y</TH>  
-      <TH>�A���C�������g</TH>  
-      <TH>�^</TH> 
-      <TH>���e</TH> 
+      <TH>オフセット</TH>  
+      <TH>サイズ</TH>  
+      <TH>アラインメント</TH>  
+      <TH>型</TH> 
+      <TH>内容</TH> 
     </tr>
     <tr>
       <TD class="number">0</TD> 
       <TD class="number">8</TD> 
-      <TD class="number">�@</TD> 
+      <TD class="number">　</TD> 
       <TD><a href="#script_pointer">SCRIPT_POINTER</a></TD> 
-      <TD>�Z�[�u���̃X�N���v�g�|�C���^<b>��</b></TD> 
+      <TD>セーブ時のスクリプトポインタ<b>※</b></TD> 
     </tr>
     <tr>
       <TD class="number">8</TD> 
       <TD class="number">64</TD> 
-      <TD class="number">�@</TD> 
+      <TD class="number">　</TD> 
       <TD><a href="#script_pointer">SCRIPT_POINTER</a>[8]</TD> 
-      <TD><a href="#gosub">gosub����</a>�p�X�^�b�N</TD> 
+      <TD><a href="#gosub">gosub命令</a>用スタック</TD> 
     </tr>
     <tr>
       <TD class="number">72</TD> 
       <TD class="number">241</TD> 
       <TD class="number">242</TD> 
       <TD>char[241]</TD> 
-      <TD>���b�Z�[�W�E�B���h�E�̕�����</TD> 
+      <TD>メッセージウィンドウの文字列</TD> 
     </tr>
     <tr>
       <TD class="number"><b>314</b></TD> 
       <TD class="number"><b>2</b></TD> 
-      <TD class="number">�@</TD> 
+      <TD class="number">　</TD> 
       <TD><b>short</b></TD> 
-      <TD><b>���b�Z�[�W�X�s�[�h�i1�����\�����̑҂����ԁi�~10ms�j�j</b></TD> 
+      <TD><b>メッセージスピード（1文字表示毎の待ち時間（×10ms））</b></TD> 
     </tr>
     <tr>
       <TD class="number">316</TD> 
       <TD class="number">17</TD> 
       <TD class="number">18</TD> 
       <TD>char[17]</TD> 
-      <TD><a href="#clickstr">clickstr����</a>�̃L�[�҂�������</TD> 
+      <TD><a href="#clickstr">clickstr命令</a>のキー待ち文字列</TD> 
     </tr>
     <tr>
       <TD class="number">334</TD> 
       <TD class="number">2</TD> 
-      <TD class="number">�@</TD> 
+      <TD class="number">　</TD> 
       <TD>short</TD> 
-      <TD><a href="#clickstr">clickstr����</a>�̃y�[�W����s��</TD> 
+      <TD><a href="#clickstr">clickstr命令</a>のページ送り行数</TD> 
     </tr>
     <tr>
       <TD class="number">336</TD> 
       <TD class="number">544</TD> 
-      <TD class="number">�@</TD> 
+      <TD class="number">　</TD> 
       <TD>short[256+16]</TD> 
-      <TD>���[�J���ϐ��A�O���[�o���ϐ��i�_�~�[�j</TD> 
+      <TD>ローカル変数、グローバル変数（ダミー）</TD> 
     </tr>
     <tr>
       <TD class="number">880</TD> 
       <TD class="number">8</TD> 
-      <TD class="number">�@</TD> 
+      <TD class="number">　</TD> 
       <TD><a href="#window_state">WINDOW_STATE</a></TD> 
-      <TD>�E�B���h�E�̏��</TD> 
+      <TD>ウィンドウの状態</TD> 
     </tr>
     <tr>
       <TD class="number">888</TD> 
       <TD class="number">2</TD> 
-      <TD class="number">�@</TD> 
+      <TD class="number">　</TD> 
       <TD>short</TD> 
-      <TD>�w�i�F�i�摜�̏ꍇ��-1�j</TD> 
+      <TD>背景色（画像の場合は-1）</TD> 
     </tr>
     <tr>
       <TD class="number">890</TD> 
       <TD class="number">119</TD> 
       <TD class="number">120</TD> 
       <TD>char[7][17]</TD> 
-      <TD>�摜�t�@�C�����i���A���A�E�A�X�v���C�g1�`3�A�w�i�j</TD> 
+      <TD>画像ファイル名（左、中、右、スプライト1～3、背景）</TD> 
     </tr>
     <tr>
       <TD class="number">1010</TD> 
       <TD class="number">6</TD> 
-      <TD class="number">�@</TD> 
+      <TD class="number">　</TD> 
       <TD>short[3]</TD> 
-      <TD>�X�v���C�g�\���t���O</TD> 
+      <TD>スプライト表示フラグ</TD> 
     </tr>
     <tr>
       <TD class="number">1016</TD> 
       <TD class="number">6</TD> 
-      <TD class="number">�@</TD> 
+      <TD class="number">　</TD> 
       <TD>short[3]</TD> 
-      <TD>�X�v���C�gx���W</TD> 
+      <TD>スプライトx座標</TD> 
     </tr>
     <tr>
       <TD class="number">1022</TD> 
       <TD class="number">6</TD> 
-      <TD class="number">�@</TD> 
+      <TD class="number">　</TD> 
       <TD>short[3]</TD> 
-      <TD>�X�v���C�gy���W</TD> 
+      <TD>スプライトy座標</TD> 
     </tr>
     <tr>
       <TD class="number">1028</TD> 
       <TD class="number">6</TD> 
-      <TD class="number">�@</TD> 
+      <TD class="number">　</TD> 
       <TD>short[3]</TD> 
-      <TD>�����G�摜�̉��s����</TD> 
+      <TD>立ち絵画像の奥行き順</TD> 
     </tr>
     <tr>
       <TD class="number">1034</TD> 
       <TD class="number">17</TD> 
       <TD class="number">18</TD> 
       <TD>char[17]</TD> 
-      <TD>BGM�t�@�C����</TD> 
+      <TD>BGMファイル名</TD> 
     </tr>
     <tr>
       <TD class="number"><b>1052</b></TD> 
       <TD class="number"><b>4</b></TD> 
-      <TD class="number">�@</TD> 
+      <TD class="number">　</TD> 
       <TD><b>BOOL</b></TD> 
-      <TD><b>�f�o�b�O���[�h���ۂ�</b></TD> 
+      <TD><b>デバッグモードか否か</b></TD> 
     </tr>
   </table>
   <b> 
-  ��</b>�I�����̎��_�ŃZ�[�u�����ꍇ�A�X�N���v�g�|�C���^��sel���߂̒n�_�ɂȂ�܂��B
-  <h5><a name="script_pointer"></a>SCRIPT_POINTER�^�ɂ���</h5>
+  ※</b>選択肢の時点でセーブした場合、スクリプトポインタはsel命令の地点になります。
+  <h5><a name="script_pointer"></a>SCRIPT_POINTER型について</h5>
   <table border="1">
     <tr>
-      <TH>�I�t�Z�b�g</TH>  
-      <TH>�T�C�Y</TH>  
-      <TH>�^</TH> 
-      <TH>���e</TH> 
+      <TH>オフセット</TH>  
+      <TH>サイズ</TH>  
+      <TH>型</TH> 
+      <TH>内容</TH> 
     </tr>
     <tr>
       <TD class="number">0</TD> 
       <TD class="number">4</TD> 
       <TD>unsigned long</TD> 
-      <TD>�|�C���^</TD> 
+      <TD>ポインタ</TD> 
     </tr>
     <tr>
       <TD class="number">4</TD> 
       <TD class="number">4</TD> 
       <TD>unsigned long</TD> 
-      <TD>�s</TD> 
+      <TD>行</TD> 
     </tr>
   </table>
-  <h5><a name="window_state"></a>WINDOW_STATE�^�ɂ���</h5>
+  <h5><a name="window_state"></a>WINDOW_STATE型について</h5>
   <table border="1">
     <tr>
-      <TH>�I�t�Z�b�g</TH>  
-      <TH>�T�C�Y</TH>  
-      <TH>�^</TH> 
-      <TH>���e</TH> 
+      <TH>オフセット</TH>  
+      <TH>サイズ</TH>  
+      <TH>型</TH> 
+      <TH>内容</TH> 
     </tr>
     <tr>
       <TD class="number">0</TD> 
       <TD class="number">2</TD> 
       <TD>short</TD> 
-      <TD>�E�B���h�E�ʒu</TD> 
+      <TD>ウィンドウ位置</TD> 
     </tr>
     <tr>
       <TD class="number">2</TD> 
       <TD class="number">2</TD> 
       <TD>short</TD> 
-      <TD>�s��</TD> 
+      <TD>行数</TD> 
     </tr>
     <tr>
       <TD class="number">4</TD> 
       <TD class="number">2</TD> 
       <TD>short</TD> 
-      <TD>�t�H���g</TD> 
+      <TD>フォント</TD> 
     </tr>
     <tr>
       <TD class="number">6</TD> 
       <TD class="number">2</TD> 
       <TD>short</TD> 
-      <TD>�E�B���h�E�F</TD> 
+      <TD>ウィンドウ色</TD> 
     </tr>
   </table>
 </BLOCKQUOTE> 
@@ -937,7 +937,7 @@ VISUALNOVEL SYSTEM�xVer1.x</b>�����<b>2.x</b>�Ƃ̌݊����͂���܂���̂ł����Ӊ�
 </TR>               
 </TABLE>               
                
-<P class="text" align="center"><A href="http://zurachu.net/"><IMG border="1" src="bnzurachu.gif" alt="�ĂƂ灚�ۂ���" width="200" height="40"></A></P>   
+<P class="text" align="center"><A href="http://zurachu.net/"><IMG border="1" src="bnzurachu.gif" alt="てとら★ぽっと" width="200" height="40"></A></P>   
              
 </BODY>             
 </HTML>             

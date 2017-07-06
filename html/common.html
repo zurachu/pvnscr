@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
 <title>P/ECE VISUALNOVEL Scripter</title>
@@ -12,34 +12,34 @@
 #define _SIZEOF_LOCAL_		256
 #define _SIZEOF_GLOBAL_	16
 
-typedef struct tagSCRIPT_POINTER {	// ƒXƒNƒŠƒvƒgƒ|ƒCƒ“ƒ^
-	unsigned long ptr;	// ƒ|ƒCƒ“ƒ^
-	unsigned long line;	// s
+typedef struct tagSCRIPT_POINTER {	// ã‚¹ã‚¯ãƒªãƒ—ãƒˆãƒã‚¤ãƒ³ã‚¿
+	unsigned long ptr;	// ãƒã‚¤ãƒ³ã‚¿
+	unsigned long line;	// è¡Œ
 } SCRIPT_POINTER;
 
-typedef struct tagWINDOW_STATE {	// ƒEƒBƒ“ƒhƒE‚Ìó‘Ô
-	short pos;		// ˆÊ’u	0:ã‚©‚ç	1:‰º‚©‚ç
-	short line;		// s”	1`8
-	short font;		// •¶Žš	0:•W€	1:k¬
-	short color;	// F	0:”’	1:•
+typedef struct tagWINDOW_STATE {	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®çŠ¶æ…‹
+	short pos;		// ä½ç½®	0:ä¸Šã‹ã‚‰	1:ä¸‹ã‹ã‚‰
+	short line;		// è¡Œæ•°	1ï½ž8
+	short font;		// æ–‡å­—	0:æ¨™æº–	1:ç¸®å°
+	short color;	// è‰²	0:ç™½	1:é»’
 } WINDOW_STATE;
 
 typedef struct tagSAVE_DATA {
-	SCRIPT_POINTER sp;						// ƒ[ƒhŽž‚ÌƒXƒNƒŠƒvƒgŽÀsŠJŽnƒ|ƒCƒ“ƒ^
-	SCRIPT_POINTER stack[_SIZEOF_STACK_];			// gosub—pƒXƒ^ƒbƒN
-	char msg[241];							// •\Ž¦’†‚ÌƒƒbƒZ[ƒW
-	short msgSpeed;							// ƒƒbƒZ[ƒWƒXƒs[ƒhiVer3.1’Ç‰ÁIj
-	char clickStr[17];						// Ž©“®ƒL[‘Ò‚¿•¶ŽšŒQ
-	short clickLine;							// clickstrŽž‚Ì‰üƒy[ƒWs”
-	short variable[_SIZEOF_LOCAL_+_SIZEOF_GLOBAL_];	// ƒ[ƒJƒ‹•Ï”{ƒOƒ[ƒoƒ‹•Ï”
-	WINDOW_STATE win;							// ƒEƒBƒ“ƒhƒE‚Ìó‘Ô
-	short bgColor;							// ”wŒiF
-	char pgdName[7][17];						// ‰æ‘œƒtƒ@ƒCƒ‹–¼i¶A’†A‰EASp1`3A”wŒij
-	short sprV[3];							// ƒXƒvƒ‰ƒCƒg•\Ž¦ƒtƒ‰ƒO
-	short sprX[3];							// ƒXƒvƒ‰ƒCƒgXÀ•W
-	short sprY[3];							// ƒXƒvƒ‰ƒCƒgYÀ•W
-	short zOrder[3];							// ‰æ‘œ•\Ž¦‚Ì‰œs‚«‡i‰œ‚©‚çj
-	char pmdName[17];							// BGMƒtƒ@ƒCƒ‹–¼
+	SCRIPT_POINTER sp;						// ãƒ­ãƒ¼ãƒ‰æ™‚ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆå®Ÿè¡Œé–‹å§‹ãƒã‚¤ãƒ³ã‚¿
+	SCRIPT_POINTER stack[_SIZEOF_STACK_];			// gosubç”¨ã‚¹ã‚¿ãƒƒã‚¯
+	char msg[241];							// è¡¨ç¤ºä¸­ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
+	short msgSpeed;							// ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚¹ãƒ”ãƒ¼ãƒ‰ï¼ˆVer3.1è¿½åŠ ï¼ï¼‰
+	char clickStr[17];						// è‡ªå‹•ã‚­ãƒ¼å¾…ã¡æ–‡å­—ç¾¤
+	short clickLine;							// clickstræ™‚ã®æ”¹ãƒšãƒ¼ã‚¸è¡Œæ•°
+	short variable[_SIZEOF_LOCAL_+_SIZEOF_GLOBAL_];	// ãƒ­ãƒ¼ã‚«ãƒ«å¤‰æ•°ï¼‹ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°
+	WINDOW_STATE win;							// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®çŠ¶æ…‹
+	short bgColor;							// èƒŒæ™¯è‰²
+	char pgdName[7][17];						// ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«åï¼ˆå·¦ã€ä¸­ã€å³ã€Sp1ï½ž3ã€èƒŒæ™¯ï¼‰
+	short sprV[3];							// ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆè¡¨ç¤ºãƒ•ãƒ©ã‚°
+	short sprX[3];							// ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆXåº§æ¨™
+	short sprY[3];							// ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆYåº§æ¨™
+	short zOrder[3];							// ç”»åƒè¡¨ç¤ºã®å¥¥è¡Œãé †ï¼ˆå¥¥ã‹ã‚‰ï¼‰
+	char pmdName[17];							// BGMãƒ•ã‚¡ã‚¤ãƒ«å
 } SAVE_DATA;</pre>
 </body>
 
