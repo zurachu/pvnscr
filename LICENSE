@@ -1,0 +1,94 @@
+MIT License
+
+Copyright (c) 2017 zurachu
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------------
+私作成以外のコードについては、以下の通りです。
+
+libfpk（Yui N. 氏）
+> libfpk の，pceFileReadPos() と LZSS / zlib 展開ルーチン以外の著作権は Yui N. が
+> 保持します。
+> 
+> libfpk の LZSS 展開ルーチンは，p/ware / Hitode Yamatsuki さんの plz のソースコ
+> ードおよび後述の URL の記事が元になっています。この LZSS 展開ルーチンの著作権表
+> 示は以下のとおりです（ファイル名や関数名を libfpk に合わせています）。
+> 
+> 	hitodeLZSSDecoder() のソースコードの著作権は p/ware / Hitode Yamatsuki
+> 	が保持していますが、転載・改変・再配布・利用は自由です。便利だと思われ
+> 	たら積極的にご利用ください
+> 
+> p/ware さんによるオリジナルの LZSS デコードルーチンは，
+> 	http://www.aw.wakwak.com/~hitode/piece/index.html#plz
+> から得ることができます。
+> 
+> pceFileReadPos() は，「おでかけマルチ」のソースコード piece_ex.c から引用しまし
+> た。この部分のライセンスについては，AQUAPLUS の「付属ソースを元にしたプログラム
+> の再配布の扱いについて」に従います。
+> 
+> 原本の著作権表示は以下のとおりです。
+> 	Copyright:	AQUA (Leaf)  since 2001 - 
+> 	Programd by.	Miyakusa Masakazu
+> 
+> libfpk における zlib 圧縮エントリの展開には，ヅラChu さんの myunpack のソースを
+> 利用しており，まかべひろし さんによる zlib 展開ルーチンサンプル（P/ECE HAND
+> BOOK Vol.2「緋色の霧」より）のコードを含みます。
+> 
+> ヅラ Chu さんの myunpack は，
+> 	http://zurachu.net/piece/tips/ppack.html
+> から得ることができます。
+> 
+> 肝心の pceZlibExpand() は，P/ECE カーネル 1.20 のソースコードをそのまま利用して
+> います（inflate.c, inflate.h, piecezl.h）。この部分のライセンスについては，
+> AQUAPLUS の「付属ソースを元にしたプログラムの再配布の扱いについて」に従います。
+> （inflate.c はパブリックドメイン扱い）
+> 
+> 原本の著作権表示は以下のとおりです。
+> 	Copyright (C)2001 AQUAPLUS Co., Ltd. / OeRSTED, Inc. 
+> 	all rights reserved.
+> 	Coded by MIO.H (OeRSTED)
+> 
+> 私が書いた部分については転載・改変・再配布自由です。あなたが開発するアプリに合
+> わせてチューニングしたり，プライベートビルドを作成して配布するなどしてください。
+Yui N. 氏記述部分について改変しています（fpkExtractToBuffer.c）
+
+htomei2.c, htomei2.h
+半透明(反転)関数（GENGE氏）
+sfont.c, sfont.h
+縮小フォント表示関数（GENGE氏）
+http://www13.plala.or.jp/genge/
+> あらゆるデータにおいて、いかなる問題に関しても、
+> GENGEは一切責任を負いませんのでご了承下さい。
+> プログラムの一部拝借等はご自由に、、、
+> (必ず自己責任でお願いします。)
+
+muslib2.h, instdef2.c, drum.arc
+ドラム音色分離キット（Randomist氏）
+再配布については、以下のように記載されています。
+> アーカイブ内の各ファイルの改変、再配布などは自由に行なってください。
+
+--------------------------------------------------------------------------------
+チュートリアルのリソースについては、以下の通りです。
+
+winnie.pmd
+ウィニーメイの夢（CHEMOOL 氏）
+http://sound.jp/chemool/
+> ※本データの全部または一部を著作者の断りなく二次配布する事を禁じます。
+本アプリのリリース時に許可をいただいております。
